@@ -1,255 +1,301 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" class="no-js">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nemadzivhanani IT Solutions</title>
-  <meta name="description" content="IT Support, Wi-Fi & Network Setup, Computer & Printer Setup, Hardware upgrades, and Business Websites." />
-
-  <link rel="icon" href="assets/logo.png" />
+  <meta name="description" content="Reliable IT Support & Solutions for home and small business: Wi-Fi & network setup, computer & printer setup, hardware upgrades, and business websites." />
   <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Go to top">
+  <!-- Top bar -->
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Nemadzivhanani IT Solutions">
         <img class="brand-logo" src="assets/logo.png" alt="Nemadzivhanani IT Solutions logo" />
-        <span class="brand-text">Nemadzivhanani IT Solutions</span>
+        <div class="brand-text">
+          <div class="brand-name">Nemadzivhanani IT Solutions</div>
+          <div class="brand-tag">IT Support • Wi-Fi • Computers • Websites</div>
+        </div>
       </a>
 
-      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">
-        <span class="menu-btn__bar"></span>
-        <span class="menu-btn__bar"></span>
-        <span class="menu-btn__bar"></span>
-        <span class="sr-only">Open menu</span>
-      </button>
-
-      <nav class="nav" aria-label="Primary">
-        <div class="nav-links" id="navLinks">
-          <a href="#services">Services</a>
-          <a href="#why">Why us</a>
-          <a href="#how">How we work</a>
-          <a href="#examples">Examples</a>
-          <a href="#contact">Contact</a>
-          <a class="btn btn--primary"
-             href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..."
-             target="_blank" rel="noopener">
-            WhatsApp
-          </a>
-        </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#process">How we work</a>
+        <a href="#examples">Examples</a>
+        <a href="#contact">Contact</a>
       </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+        </button>
+        <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- Hero -->
   <main id="top">
-    <!-- Hero -->
     <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-copy">
-          <p class="badge reveal">IT Support & Solutions</p>
-          <h1 class="reveal">Reliable IT support for home & small business.</h1>
-          <p class="lead reveal">
-            We help with troubleshooting, Wi-Fi & network setup, computers & printers, <b>hardware upgrades (RAM/SSD)</b>,
-            and clean, mobile-friendly business websites.
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <div class="pill">IT Support & Solutions</div>
+          <h1>Reliable IT support for home & small business.</h1>
+          <p class="lead">
+            We help with troubleshooting, Wi-Fi & network setup, computers & printers,
+            hardware upgrades (RAM/SSD), and clean, mobile-friendly business websites.
           </p>
 
-          <div class="hero-cta reveal">
-            <a class="btn btn--primary"
-               href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..."
-               target="_blank" rel="noopener">
-              Get Free Consultation
-            </a>
-            <a class="btn btn--ghost" href="#services">View Services</a>
-            <a class="btn btn--ghost" href="tel:+27814737476">Call</a>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#contact">Get Free Consultation</a>
+            <a class="btn btn-ghost" href="#services">View Services</a>
+            <a class="btn btn-ghost" href="tel:+27814737476">Call</a>
           </div>
 
-          <p class="meta reveal">Soweto • Mon–Fri (09:00–17:00) • On-site or remote</p>
+          <div class="micro">
+            <span>Soweto</span>
+            <span class="dot">•</span>
+            <span>Mon–Fri (09:00–17:00)</span>
+            <span class="dot">•</span>
+            <span>On-site or remote</span>
+          </div>
         </div>
 
-        <div class="hero-card reveal">
+        <aside class="hero-panel reveal">
           <h3>Quick help checklist</h3>
-          <ul>
+          <ul class="checklist">
             <li>Wi-Fi slow or disconnecting</li>
             <li>Printer not printing / not detected</li>
             <li>Laptop slow / errors / updates</li>
             <li>RAM/SSD upgrade request</li>
             <li>Need a simple business website</li>
           </ul>
-        </div>
+          <div class="panel-actions">
+            <a class="btn btn-soft" href="mailto:info@nemadzivhananiit.co.za">Email us</a>
+            <a class="btn btn-soft" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </aside>
       </div>
-      <div class="hero-wave" aria-hidden="true"></div>
+      <div class="hero-divider"></div>
     </section>
 
     <!-- Services -->
-    <section class="section" id="services">
+    <section id="services" class="section">
       <div class="container">
-        <div class="section-head reveal">
-          <h2>Services</h2>
-          <p class="sub">Clear, affordable, and explained in simple terms.</p>
-        </div>
+        <header class="section-head reveal">
+          <h2>Comprehensive IT Services</h2>
+          <p class="sub">Clear, affordable help — explained in simple terms.</p>
+        </header>
 
-        <div class="grid">
-          <article class="card reveal">
+        <div class="grid reveal">
+          <article class="card">
+            <div class="card-icon">🛠️</div>
             <h3>IT Support & Troubleshooting</h3>
-            <p>Fix software issues, updates, errors, slow PCs, and general support.</p>
+            <p>Fix errors, slow PCs, software issues, updates, and general tech problems.</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card">
+            <div class="card-icon">📶</div>
             <h3>Wi-Fi & Network Setup</h3>
-            <p>Router setup, security, coverage improvements, and network fixes.</p>
+            <p>Router setup, better coverage, repeaters, and stable connections for home/office.</p>
           </article>
 
-          <article class="card reveal">
+          <article class="card">
+            <div class="card-icon">🖨️</div>
             <h3>Computer & Printer Setup</h3>
-            <p>Install devices, drivers, scanning setup, and proper connections.</p>
+            <p>New PC setup, printer install, sharing on Wi-Fi, and troubleshooting printing issues.</p>
           </article>
 
-          <article class="card reveal">
-            <h3>Hardware Solutions</h3>
-            <p>RAM installation, SSD upgrades, basic PC checks, and performance boosts.</p>
+          <article class="card">
+            <div class="card-icon">💾</div>
+            <h3>Hardware Upgrades</h3>
+            <p>RAM / SSD upgrades, clean installs, performance tuning, and basic maintenance.</p>
           </article>
 
-          <article class="card reveal">
-            <h3>Basic Business Websites</h3>
-            <p>Clean 1–5 page websites with WhatsApp contact and mobile-friendly layout.</p>
+          <article class="card">
+            <div class="card-icon">🌐</div>
+            <h3>Business Websites</h3>
+            <p>Fast, responsive websites for small businesses — built to convert on mobile.</p>
           </article>
 
-          <article class="card reveal">
-            <h3>Remote Support</h3>
-            <p>Quick help via call/WhatsApp when you don’t need a visit.</p>
+          <article class="card">
+            <div class="card-icon">✅</div>
+            <h3>Fix / Setup / Build</h3>
+            <p>We resolve the problem or deliver your website with support.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Why us -->
-    <section class="section section--alt" id="why">
+    <section id="why" class="section section-alt">
       <div class="container">
-        <div class="section-head reveal">
+        <header class="section-head reveal">
           <h2>Why choose us</h2>
-          <p class="sub">Trusted, fast, and straight to the point.</p>
-        </div>
+          <p class="sub">Simple process. Clean work. Honest communication.</p>
+        </header>
 
-        <div class="grid grid--3">
-          <div class="mini-card reveal">
+        <div class="grid-2 reveal">
+          <div class="note">
             <h3>Fast response</h3>
-            <p>Quick replies with clear next steps.</p>
+            <p>We prioritize urgent issues and keep you updated while we work.</p>
           </div>
-          <div class="mini-card reveal">
-            <h3>Simple explanations</h3>
-            <p>No confusing tech talk. You’ll understand what’s happening.</p>
+          <div class="note">
+            <h3>Mobile-first websites</h3>
+            <p>Most clients view on phones — we design for speed and clarity.</p>
           </div>
-          <div class="mini-card reveal">
-            <h3>Affordable & honest</h3>
-            <p>Fair pricing and honest advice on what’s worth fixing.</p>
+          <div class="note">
+            <h3>Affordable & clear</h3>
+            <p>No tech jargon. We explain the fix and the cost before we start.</p>
+          </div>
+          <div class="note">
+            <h3>On-site or remote</h3>
+            <p>We can assist in-person or guide you remotely depending on the job.</p>
           </div>
         </div>
       </div>
     </section>
 
     <!-- How we work -->
-    <section class="section" id="how">
+    <section id="process" class="section">
       <div class="container">
-        <div class="section-head reveal">
+        <header class="section-head reveal">
           <h2>How we work</h2>
-          <p class="sub">A simple process that saves you time.</p>
-        </div>
+          <p class="sub">A simple 3-step process that keeps everything clear.</p>
+        </header>
 
-        <ol class="steps">
-          <li class="step reveal">
-            <span class="step-num">1</span>
+        <div class="steps reveal">
+          <div class="step">
+            <div class="step-num">1</div>
             <div>
-              <h3>Contact us</h3>
-              <p>Message or call. Tell us what you need help with.</p>
+              <h3>Message / Call</h3>
+              <p>Tell us what’s happening (WhatsApp is fastest).</p>
             </div>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">2</span>
+          </div>
+
+          <div class="step">
+            <div class="step-num">2</div>
             <div>
               <h3>Quick assessment</h3>
-              <p>We diagnose the issue and confirm the best solution.</p>
+              <p>We diagnose and confirm the best solution + estimate.</p>
             </div>
-          </li>
-          <li class="step reveal">
-            <span class="step-num">3</span>
+          </div>
+
+          <div class="step">
+            <div class="step-num">3</div>
             <div>
               <h3>Fix / setup / build</h3>
               <p>We resolve the problem or deliver your website with support.</p>
             </div>
-          </li>
-        </ol>
+          </div>
+        </div>
       </div>
     </section>
 
     <!-- Examples -->
-    <section class="section" id="examples">
+    <section id="examples" class="section section-alt">
       <div class="container">
-        <div class="section-head reveal">
+        <header class="section-head reveal">
           <h2>Example websites</h2>
-          <p class="sub">
-            Coming soon. We’ll showcase demo sites here. For now, request a demo link on WhatsApp.
-          </p>
-        </div>
+          <p class="sub">Coming soon. For now, request a demo link on WhatsApp.</p>
+        </header>
 
-        <div class="grid grid--2">
-          <div class="card reveal card--placeholder">
+        <div class="grid reveal">
+          <article class="card">
+            <div class="card-icon">🏪</div>
             <h3>Demo #1 — Small Business</h3>
             <p>Service-based layout (hair salon, cleaning, etc.).</p>
-            <a class="btn btn--ghost" href="https://wa.me/27814737476?text=Hi%2C%20please%20send%20me%20your%20demo%20website%20examples."
-               target="_blank" rel="noopener">Request demo link</a>
-          </div>
+            <a class="link" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions,%20please%20send%20me%20Demo%20%231%20link." target="_blank" rel="noopener">Request demo link →</a>
+          </article>
 
-          <div class="card reveal card--placeholder">
+          <article class="card">
+            <div class="card-icon">👤</div>
             <h3>Demo #2 — Portfolio</h3>
             <p>Personal brand style (photographer, DJ, etc.).</p>
-            <a class="btn btn--ghost" href="https://wa.me/27814737476?text=Hi%2C%20please%20send%20me%20your%20demo%20website%20examples."
-               target="_blank" rel="noopener">Request demo link</a>
-          </div>
+            <a class="link" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions,%20please%20send%20me%20Demo%20%232%20link." target="_blank" rel="noopener">Request demo link →</a>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Demo #3 — Business Info</h3>
+            <p>Simple brochure site (about, services, contact).</p>
+            <a class="link" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions,%20please%20send%20me%20Demo%20%233%20link." target="_blank" rel="noopener">Request demo link →</a>
+          </article>
         </div>
       </div>
     </section>
 
     <!-- Contact -->
-    <section class="section section--cta" id="contact">
-      <div class="container cta reveal">
-        <div>
+    <section id="contact" class="section">
+      <div class="container">
+        <header class="section-head reveal">
           <h2>Need help today?</h2>
           <p class="sub">WhatsApp is the fastest way to reach us.</p>
+        </header>
+
+        <div class="contact-grid reveal">
+          <form class="contact-card" onsubmit="return false;">
+            <h3>Send a message</h3>
+            <p class="small">This form is visual for now. Use WhatsApp/Email to contact us.</p>
+
+            <div class="fields">
+              <label>
+                Full Name
+                <input type="text" placeholder="Your name" />
+              </label>
+              <label>
+                Email
+                <input type="email" placeholder="you@email.com" />
+              </label>
+              <label class="span2">
+                How can we help?
+                <textarea rows="4" placeholder="Tell us what you need..."></textarea>
+              </label>
+            </div>
+
+            <div class="cta-row">
+              <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+              <a class="btn btn-ghost" href="mailto:info@nemadzivhananiit.co.za">Email</a>
+              <a class="btn btn-ghost" href="tel:+27814737476">Call</a>
+            </div>
+          </form>
+
+          <aside class="contact-side">
+            <div class="mini">
+              <h3>Contact</h3>
+              <p><strong>Email:</strong> <a href="mailto:info@nemadzivhananiit.co.za">info@nemadzivhananiit.co.za</a></p>
+              <p><strong>Call/WhatsApp:</strong> <a href="tel:+27814737476">081 473 7476</a></p>
+              <p><strong>Area:</strong> Soweto</p>
+              <p class="small">Mon–Fri (09:00–17:00)</p>
+            </div>
+
+            <div class="cta-box">
+              <h3>Get a free consultation</h3>
+              <p class="small">Tell us your issue and we’ll recommend the best solution.</p>
+              <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">Start on WhatsApp</a>
+            </div>
+          </aside>
         </div>
-        <div class="cta-actions">
-          <a class="btn btn--primary" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..."
-             target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn--ghost" href="tel:+27814737476">Call</a>
-          <!-- Replace with your poster email when ready -->
-          <a class="btn btn--ghost" href="mailto:info@nemadzivhananiit.co.za">Email</a>
-        </div>
+
+        <footer class="footer">
+          <div class="footer-left">
+            <strong>Nemadzivhanani IT Solutions</strong>
+            <div class="small">Soweto • Mon–Fri (09:00–17:00)</div>
+          </div>
+          <div class="footer-links">
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+          <div class="small">© <span id="year"></span> Nemadzivhanani IT Solutions</div>
+        </footer>
       </div>
     </section>
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <img src="assets/logo.png" alt="" class="footer-logo" />
-        <div>
-          <strong>Nemadzivhanani IT Solutions</strong>
-          <div class="footer-meta">Soweto • Mon–Fri (09:00–17:00)</div>
-        </div>
-      </div>
-
-      <div class="footer-links">
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-
-      <div class="footer-copy">© <span id="year"></span> Nemadzivhanani IT Solutions</div>
-    </div>
-  </footer>
+  <script src="js/main.js"></script>
 </body>
 </html>
