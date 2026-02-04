@@ -430,3 +430,89 @@ textarea{ resize: vertical; }
   .span2{ grid-column: auto; }
   .brand-tag{ display:none; }
 }
+
+
+/* =========================
+   MOBILE FIX PACK (Hero + Header + Buttons)
+   ========================= */
+
+@media (max-width: 980px){
+  /* Header: make it shorter + stop wrapping */
+  .nav{
+    height: 60px;
+    gap: 10px;
+  }
+
+  .brand{
+    min-width: 0;
+    gap: 10px;
+  }
+
+  .brand-logo{
+    width: 30px;
+    height: 30px;
+  }
+
+  .brand-name{
+    font-size: 14px;
+    line-height: 1.1;
+  }
+
+  /* Put actions in one line and keep WhatsApp button smaller */
+  .nav-actions{
+    gap: 8px;
+  }
+  .btn{
+    padding: 10px 12px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+  .btn-primary{
+    box-shadow: none; /* lighter on mobile */
+  }
+
+  /* Hero: reduce padding and font sizes */
+  .hero-grid{
+    padding: 38px 0 32px;
+    gap: 16px;
+  }
+
+  .hero h1{
+    font-size: 34px;
+    line-height: 1.05;
+    max-width: none;
+  }
+
+  .lead{
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  /* Buttons: make 2 columns so they fit cleanly */
+  .cta-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .cta-row .btn{
+    width: 100%;
+  }
+  /* Make Call full width under the first row */
+  .cta-row .btn:last-child{
+    grid-column: 1 / -1;
+  }
+
+  /* Panel: make it feel like a neat card */
+  .hero-panel{
+    padding: 16px;
+    border-radius: 18px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px){
+  .brand-name{ font-size: 13px; }
+  .hero h1{ font-size: 30px; }
+  .cta-row{ grid-template-columns: 1fr; } /* stack buttons */
+  .cta-row .btn:last-child{ grid-column: auto; }
+}
