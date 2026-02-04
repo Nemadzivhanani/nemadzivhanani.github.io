@@ -1,12 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nemadzivhanani IT Solutions</title>
+  <meta name="description" content="IT Support, Wi-Fi & Network Setup, Computer & Printer Setup, and Basic Business Websites in Soweto and surrounding areas." />
+  <style>
+    :root { --max: 980px; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,Arial,sans-serif;line-height:1.5;color:#111;background:#fff}
+    a{color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee}
+    nav{display:flex;gap:14px;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:12px 24px}
+    nav .links{display:flex;gap:14px;flex-wrap:wrap}
+    nav a{font-size:14px;text-decoration:none;padding:6px 8px;border-radius:8px}
+    nav a:hover{background:#f5f5f5}
+    .btn{display:inline-block;text-decoration:none;padding:10px 14px;border-radius:10px;border:1px solid #111;font-weight:600}
+    .btn.primary{background:#111;color:#fff}
+    .hero{padding:34px 0}
+    .hero h1{font-size:40px;line-height:1.1;margin:0 0 10px}
+    .hero p{max-width:70ch;margin:0 0 16px;color:#333}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .card{border:1px solid #eee;border-radius:14px;padding:16px;background:#fff}
+    .muted{color:#444;font-size:14px}
+    h2{margin:0 0 10px;font-size:22px}
+    h3{margin:0 0 6px;font-size:16px}
+    section{padding:22px 0}
+    .col6{grid-column:span 6}
+    .col4{grid-column:span 4}
+    .col12{grid-column:span 12}
+    footer{border-top:1px solid #eee;padding:18px 0;color:#555;font-size:13px}
+    @media (max-width: 760px){
+      .hero h1{font-size:30px}
+      .col6,.col4{grid-column:span 12}
+      nav{gap:10px}
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Nemadzivhanani IT Solutions</h1>
-  <p>IT Support • Wi-Fi • Computers • Websites</p>
-  <p>Website coming soon.</p>
+  <header>
+    <nav>
+      <strong>Nemadzivhanani IT Solutions</strong>
+      <div class="links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+        <a class="btn primary" href="https://wa.me/27787465300?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..." target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="grid">
+        <div class="col12">
+          <h1>Fast, reliable IT help for homes & small businesses.</h1>
+          <p>
+            I help with <b>Wi-Fi & network setup</b>, <b>computer & printer setup</b>, and <b>troubleshooting</b>.
+            I also build <b>basic business websites</b> that look clean and work on mobile.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn primary" href="https://wa.me/27787465300?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..." target="_blank" rel="noopener">Message on WhatsApp</a>
+            <a class="btn" href="#services">See services</a>
+          </div>
+          <p class="muted" style="margin-top:10px">
+            Based in Soweto • Available Mon–Fri • On-site or remote support
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card col6">
+          <h3>IT Support & Troubleshooting</h3>
+          <p class="muted">Slow PC, software issues, updates, errors, basic security clean-ups, and general tech support.</p>
+        </div>
+        <div class="card col6">
+          <h3>Wi-Fi & Network Setup</h3>
+          <p class="muted">Router setup, Wi-Fi security, coverage improvements, network troubleshooting for homes/offices.</p>
+        </div>
+        <div class="card col6">
+          <h3>Computer & Printer Setup</h3>
+          <p class="muted">New PC setup, printer install, driver fixes, scanning setup, and connecting devices properly.</p>
+        </div>
+        <div class="card col6">
+          <h3>Basic Business Websites</h3>
+          <p class="muted">Clean 1–5 page websites (mobile-friendly) with contact buttons and a simple service layout.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Why choose us</h2>
+      <div class="grid">
+        <div class="card col4">
+          <h3>Fast response</h3>
+          <p class="muted">Quick replies and clear next steps so you’re not stuck.</p>
+        </div>
+        <div class="card col4">
+          <h3>Simple explanations</h3>
+          <p class="muted">No confusing tech talk — you’ll understand what’s happening.</p>
+        </div>
+        <div class="card col4">
+          <h3>Affordable & honest</h3>
+          <p class="muted">Fair pricing and I’ll tell you upfront what’s worth fixing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <h2>Work / Examples</h2>
+      <p class="muted">
+        Below are demo websites to show styles and layout options. Each client website is customised.
+      </p>
+      <div class="grid">
+        <div class="card col6">
+          <h3>Demo #1 — Small Business</h3>
+          <p class="muted">A simple service website layout.</p>
+          <a class="btn" href="#" onclick="alert('We will add your demo link here after you create it.'); return false;">View demo</a>
+        </div>
+        <div class="card col6">
+          <h3>Demo #2 — Portfolio</h3>
+          <p class="muted">A personal/brand layout style.</p>
+          <a class="btn" href="#" onclick="alert('We will add your demo link here after you create it.'); return false;">View demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid">
+        <div class="card col12">
+          <p class="muted" style="margin-top:0">
+            For quickest help, WhatsApp me with what you need.
+          </p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <a class="btn primary" href="https://wa.me/27787465300?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..." target="_blank" rel="noopener">WhatsApp: 078 746 5300</a>
+            <a class="btn" href="tel:+27787465300">Call</a>
+          </div>
+          <p class="muted" style="margin-bottom:0;margin-top:10px">
+            Hours: Mon–Fri (09:00–17:00)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Nemadzivhanani IT Solutions • Built on GitHub Pages
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
