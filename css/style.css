@@ -567,3 +567,74 @@ input,textarea{
   .hero-copy h1{font-size: 34px}
   .panel-actions{grid-template-columns: 1fr}
 }
+
+
+.nav-right{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+/* Mobile header layout fix */
+@media (max-width: 900px){
+  .nav{
+    gap:10px;
+  }
+
+  /* Brand becomes flexible and cannot push into buttons */
+  .brand{
+    min-width: 0;
+    flex: 1;
+    gap:10px;
+  }
+
+  .brand-text{
+    min-width: 0;
+  }
+
+  /* Keep name neat (no overlap) */
+  .brand-name{
+    font-size: 14px;
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+
+  /* Hide long tagline on mobile */
+  .brand-tag{
+    display:none;
+  }
+
+  /* Right side stays fixed + clean */
+  .nav-right{
+    flex: 0 0 auto;
+    gap:8px;
+  }
+
+  /* Make icons a bit smaller on phone */
+  .icon-btn{
+    width:40px;
+    height:40px;
+    border-radius: 12px;
+  }
+
+  /* WhatsApp button smaller so it fits */
+  .nav-right .btn-primary{
+    height:40px;
+    padding: 0 12px;
+    border-radius: 14px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px){
+  .nav-right .btn-primary{
+    padding: 0 10px;
+    font-size: 13px;
+  }
+}
