@@ -1,161 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Nemadzivhanani IT Solutions</title>
-  <meta name="description" content="IT Support, Wi-Fi & Network Setup, Computer & Printer Setup, and Basic Business Websites in Soweto and surrounding areas." />
-  <style>
-    :root { --max: 980px; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,Arial,sans-serif;line-height:1.5;color:#111;background:#fff}
-    a{color:inherit}
-    .wrap{max-width:var(--max);margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee}
-    nav{display:flex;gap:14px;align-items:center;justify-content:space-between;max-width:var(--max);margin:0 auto;padding:12px 24px}
-    nav .links{display:flex;gap:14px;flex-wrap:wrap}
-    nav a{font-size:14px;text-decoration:none;padding:6px 8px;border-radius:8px}
-    nav a:hover{background:#f5f5f5}
-    .btn{display:inline-block;text-decoration:none;padding:10px 14px;border-radius:10px;border:1px solid #111;font-weight:600}
-    .btn.primary{background:#111;color:#fff}
-    .hero{padding:34px 0}
-    .hero h1{font-size:40px;line-height:1.1;margin:0 0 10px}
-    .hero p{max-width:70ch;margin:0 0 16px;color:#333}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
-    .card{border:1px solid #eee;border-radius:14px;padding:16px;background:#fff}
-    .muted{color:#444;font-size:14px}
-    h2{margin:0 0 10px;font-size:22px}
-    h3{margin:0 0 6px;font-size:16px}
-    section{padding:22px 0}
-    .col6{grid-column:span 6}
-    .col4{grid-column:span 4}
-    .col12{grid-column:span 12}
-    footer{border-top:1px solid #eee;padding:18px 0;color:#555;font-size:13px}
-    @media (max-width: 760px){
-      .hero h1{font-size:30px}
-      .col6,.col4{grid-column:span 12}
-      nav{gap:10px}
-    }
-  </style>
+  <meta name="description" content="IT Support, Wi-Fi & Network Setup, Computer & Printer Setup, Hardware upgrades, and Business Websites." />
+
+  <link rel="icon" href="assets/logo.png" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script defer src="js/main.js"></script>
 </head>
 
 <body>
-  <header>
-    <nav>
-      <strong>Nemadzivhanani IT Solutions</strong>
-      <div class="links">
-        <a href="#services">Services</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
-        <a class="btn primary" href="https://wa.me/27787465300?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..." target="_blank" rel="noopener">WhatsApp</a>
-      </div>
-    </nav>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Go to top">
+        <img class="brand-logo" src="assets/logo.png" alt="Nemadzivhanani IT Solutions logo" />
+        <span class="brand-text">Nemadzivhanani IT Solutions</span>
+      </a>
+
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">
+        <span class="menu-btn__bar"></span>
+        <span class="menu-btn__bar"></span>
+        <span class="menu-btn__bar"></span>
+        <span class="sr-only">Open menu</span>
+      </button>
+
+      <nav class="nav" aria-label="Primary">
+        <div class="nav-links" id="navLinks">
+          <a href="#services">Services</a>
+          <a href="#why">Why us</a>
+          <a href="#how">How we work</a>
+          <a href="#examples">Examples</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn--primary"
+             href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..."
+             target="_blank" rel="noopener">
+            WhatsApp
+          </a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <main class="wrap">
+  <!-- Main -->
+  <main id="top">
+    <!-- Hero -->
     <section class="hero">
-      <div class="grid">
-        <div class="col12">
-          <h1>Fast, reliable IT help for homes & small businesses.</h1>
-          <p>
-            I help with <b>Wi-Fi & network setup</b>, <b>computer & printer setup</b>, and <b>troubleshooting</b>.
-            I also build <b>basic business websites</b> that look clean and work on mobile.
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="badge reveal">IT Support & Solutions</p>
+          <h1 class="reveal">Reliable IT support for home & small business.</h1>
+          <p class="lead reveal">
+            We help with troubleshooting, Wi-Fi & network setup, computers & printers, <b>hardware upgrades (RAM/SSD)</b>,
+            and clean, mobile-friendly business websites.
           </p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="https://wa.me/27787465300?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..." target="_blank" rel="noopener">Message on WhatsApp</a>
-            <a class="btn" href="#services">See services</a>
+
+          <div class="hero-cta reveal">
+            <a class="btn btn--primary"
+               href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..."
+               target="_blank" rel="noopener">
+              Get Free Consultation
+            </a>
+            <a class="btn btn--ghost" href="#services">View Services</a>
+            <a class="btn btn--ghost" href="tel:+27814737476">Call</a>
           </div>
-          <p class="muted" style="margin-top:10px">
-            Based in Soweto • Available Mon–Fri • On-site or remote support
-          </p>
+
+          <p class="meta reveal">Soweto • Mon–Fri (09:00–17:00) • On-site or remote</p>
+        </div>
+
+        <div class="hero-card reveal">
+          <h3>Quick help checklist</h3>
+          <ul>
+            <li>Wi-Fi slow or disconnecting</li>
+            <li>Printer not printing / not detected</li>
+            <li>Laptop slow / errors / updates</li>
+            <li>RAM/SSD upgrade request</li>
+            <li>Need a simple business website</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-wave" aria-hidden="true"></div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Services</h2>
+          <p class="sub">Clear, affordable, and explained in simple terms.</p>
+        </div>
+
+        <div class="grid">
+          <article class="card reveal">
+            <h3>IT Support & Troubleshooting</h3>
+            <p>Fix software issues, updates, errors, slow PCs, and general support.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Wi-Fi & Network Setup</h3>
+            <p>Router setup, security, coverage improvements, and network fixes.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Computer & Printer Setup</h3>
+            <p>Install devices, drivers, scanning setup, and proper connections.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Hardware Solutions</h3>
+            <p>RAM installation, SSD upgrades, basic PC checks, and performance boosts.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Basic Business Websites</h3>
+            <p>Clean 1–5 page websites with WhatsApp contact and mobile-friendly layout.</p>
+          </article>
+
+          <article class="card reveal">
+            <h3>Remote Support</h3>
+            <p>Quick help via call/WhatsApp when you don’t need a visit.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="services">
-      <h2>Services</h2>
-      <div class="grid">
-        <div class="card col6">
-          <h3>IT Support & Troubleshooting</h3>
-          <p class="muted">Slow PC, software issues, updates, errors, basic security clean-ups, and general tech support.</p>
+    <!-- Why us -->
+    <section class="section section--alt" id="why">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Why choose us</h2>
+          <p class="sub">Trusted, fast, and straight to the point.</p>
         </div>
-        <div class="card col6">
-          <h3>Wi-Fi & Network Setup</h3>
-          <p class="muted">Router setup, Wi-Fi security, coverage improvements, network troubleshooting for homes/offices.</p>
-        </div>
-        <div class="card col6">
-          <h3>Computer & Printer Setup</h3>
-          <p class="muted">New PC setup, printer install, driver fixes, scanning setup, and connecting devices properly.</p>
-        </div>
-        <div class="card col6">
-          <h3>Basic Business Websites</h3>
-          <p class="muted">Clean 1–5 page websites (mobile-friendly) with contact buttons and a simple service layout.</p>
-        </div>
-      </div>
-    </section>
 
-    <section>
-      <h2>Why choose us</h2>
-      <div class="grid">
-        <div class="card col4">
-          <h3>Fast response</h3>
-          <p class="muted">Quick replies and clear next steps so you’re not stuck.</p>
-        </div>
-        <div class="card col4">
-          <h3>Simple explanations</h3>
-          <p class="muted">No confusing tech talk — you’ll understand what’s happening.</p>
-        </div>
-        <div class="card col4">
-          <h3>Affordable & honest</h3>
-          <p class="muted">Fair pricing and I’ll tell you upfront what’s worth fixing.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <h2>Work / Examples</h2>
-      <p class="muted">
-        Below are demo websites to show styles and layout options. Each client website is customised.
-      </p>
-      <div class="grid">
-        <div class="card col6">
-          <h3>Demo #1 — Small Business</h3>
-          <p class="muted">A simple service website layout.</p>
-          <a class="btn" href="#" onclick="alert('We will add your demo link here after you create it.'); return false;">View demo</a>
-        </div>
-        <div class="card col6">
-          <h3>Demo #2 — Portfolio</h3>
-          <p class="muted">A personal/brand layout style.</p>
-          <a class="btn" href="#" onclick="alert('We will add your demo link here after you create it.'); return false;">View demo</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="grid">
-        <div class="card col12">
-          <p class="muted" style="margin-top:0">
-            For quickest help, WhatsApp me with what you need.
-          </p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap">
-            <a class="btn primary" href="https://wa.me/27787465300?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..." target="_blank" rel="noopener">WhatsApp: 078 746 5300</a>
-            <a class="btn" href="tel:+27787465300">Call</a>
+        <div class="grid grid--3">
+          <div class="mini-card reveal">
+            <h3>Fast response</h3>
+            <p>Quick replies with clear next steps.</p>
           </div>
-          <p class="muted" style="margin-bottom:0;margin-top:10px">
-            Hours: Mon–Fri (09:00–17:00)
-          </p>
+          <div class="mini-card reveal">
+            <h3>Simple explanations</h3>
+            <p>No confusing tech talk. You’ll understand what’s happening.</p>
+          </div>
+          <div class="mini-card reveal">
+            <h3>Affordable & honest</h3>
+            <p>Fair pricing and honest advice on what’s worth fixing.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <footer>
-      © <span id="y"></span> Nemadzivhanani IT Solutions • Built on GitHub Pages
-    </footer>
+    <!-- How we work -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>How we work</h2>
+          <p class="sub">A simple process that saves you time.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step reveal">
+            <span class="step-num">1</span>
+            <div>
+              <h3>Contact us</h3>
+              <p>Message or call. Tell us what you need help with.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">2</span>
+            <div>
+              <h3>Quick assessment</h3>
+              <p>We diagnose the issue and confirm the best solution.</p>
+            </div>
+          </li>
+          <li class="step reveal">
+            <span class="step-num">3</span>
+            <div>
+              <h3>Fix / setup / build</h3>
+              <p>We resolve the problem or deliver your website with support.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Examples -->
+    <section class="section" id="examples">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Example websites</h2>
+          <p class="sub">
+            Coming soon. We’ll showcase demo sites here. For now, request a demo link on WhatsApp.
+          </p>
+        </div>
+
+        <div class="grid grid--2">
+          <div class="card reveal card--placeholder">
+            <h3>Demo #1 — Small Business</h3>
+            <p>Service-based layout (hair salon, cleaning, etc.).</p>
+            <a class="btn btn--ghost" href="https://wa.me/27814737476?text=Hi%2C%20please%20send%20me%20your%20demo%20website%20examples."
+               target="_blank" rel="noopener">Request demo link</a>
+          </div>
+
+          <div class="card reveal card--placeholder">
+            <h3>Demo #2 — Portfolio</h3>
+            <p>Personal brand style (photographer, DJ, etc.).</p>
+            <a class="btn btn--ghost" href="https://wa.me/27814737476?text=Hi%2C%20please%20send%20me%20your%20demo%20website%20examples."
+               target="_blank" rel="noopener">Request demo link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--cta" id="contact">
+      <div class="container cta reveal">
+        <div>
+          <h2>Need help today?</h2>
+          <p class="sub">WhatsApp is the fastest way to reach us.</p>
+        </div>
+        <div class="cta-actions">
+          <a class="btn btn--primary" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions%2C%20I%20need%20help%20with..."
+             target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn--ghost" href="tel:+27814737476">Call</a>
+          <!-- Replace with your poster email when ready -->
+          <a class="btn btn--ghost" href="mailto:info@nemadzivhananiit.co.za">Email</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/logo.png" alt="" class="footer-logo" />
+        <div>
+          <strong>Nemadzivhanani IT Solutions</strong>
+          <div class="footer-meta">Soweto • Mon–Fri (09:00–17:00)</div>
+        </div>
+      </div>
+
+      <div class="footer-links">
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <div class="footer-copy">© <span id="year"></span> Nemadzivhanani IT Solutions</div>
+    </div>
+  </footer>
 </body>
 </html>
