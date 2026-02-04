@@ -10,8 +10,8 @@
 
 <body>
   <!-- Header -->
-  <header class="site-header" id="top">
-    <div class="container header-inner">
+  <header class="header" id="top">
+    <div class="container nav">
       <a class="brand" href="#top" aria-label="Nemadzivhanani IT Solutions">
         <img class="brand-logo" src="assets/logo.png" alt="Nemadzivhanani IT Solutions logo" />
         <div class="brand-text">
@@ -20,38 +20,38 @@
         </div>
       </a>
 
-      <nav class="nav" aria-label="Primary">
-        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
-          <span aria-hidden="true">☰</span>
+      <!-- Desktop nav -->
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#process">How we work</a>
+        <a href="#examples">Examples</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="navToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
+          <span class="icon" aria-hidden="true">☰</span>
         </button>
 
-        <div class="nav-links" id="desktopLinks">
-          <a href="#services">Services</a>
-          <a href="#why">Why us</a>
-          <a href="#process">How we work</a>
-          <a href="#examples">Examples</a>
-          <a href="#contact">Contact</a>
-        </div>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+        </button>
 
-        <div class="nav-actions">
-          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
-            <span class="theme-icon" aria-hidden="true">☾</span>
-          </button>
-          <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
-        </div>
-      </nav>
+        <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
     </div>
 
     <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu" hidden>
       <div class="container mobile-menu-inner">
-        <a href="#services" class="m-link">Services</a>
-        <a href="#why" class="m-link">Why us</a>
-        <a href="#process" class="m-link">How we work</a>
-        <a href="#examples" class="m-link">Examples</a>
-        <a href="#contact" class="m-link">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#why">Why us</a>
+        <a href="#process">How we work</a>
+        <a href="#examples">Examples</a>
+        <a href="#contact">Contact</a>
 
-        <div class="mobile-actions">
+        <div class="mobile-menu-cta">
           <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn btn-ghost" href="tel:+27814737476">Call</a>
           <a class="btn btn-ghost" href="mailto:info@nemadzivhananiit.co.za">Email</a>
@@ -60,13 +60,16 @@
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Main -->
   <main>
+    <!-- Hero -->
     <section class="hero">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <div class="pill">IT Support & Solutions</div>
-
           <h1>Reliable IT support for home & small business.</h1>
 
           <p class="lead">
@@ -81,13 +84,15 @@
           </div>
 
           <div class="micro">
-            <span>Soweto</span><span class="dot">•</span>
-            <span>Mon–Fri (09:00–17:00)</span><span class="dot">•</span>
+            <span>Soweto</span>
+            <span class="dot">•</span>
+            <span>Mon–Fri (09:00–17:00)</span>
+            <span class="dot">•</span>
             <span>On-site or remote</span>
           </div>
         </div>
 
-        <aside class="hero-card reveal">
+        <aside class="hero-panel reveal">
           <h3>Quick help checklist</h3>
           <ul class="checklist">
             <li>Wi-Fi slow or disconnecting</li>
@@ -96,15 +101,14 @@
             <li>RAM/SSD upgrade request</li>
             <li>Need a simple business website</li>
           </ul>
-
-          <div class="hero-card-actions">
+          <div class="panel-actions">
             <a class="btn btn-soft" href="mailto:info@nemadzivhananiit.co.za">Email us</a>
             <a class="btn btn-soft" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </aside>
       </div>
 
-      <div class="hero-divider" aria-hidden="true"></div>
+      <div class="hero-divider"></div>
     </section>
 
     <!-- Services -->
@@ -117,37 +121,73 @@
 
         <div class="grid reveal">
           <article class="card">
-            <div class="card-icon">🛠️</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 15l-3.5 3.5a2.1 2.1 0 0 1-3-3L9 12"/>
+                <path d="M15 12l3.5-3.5a2.1 2.1 0 0 0-3-3L12 9"/>
+                <path d="M8 16l8-8"/>
+              </svg>
+            </div>
             <h3>IT Support & Troubleshooting</h3>
             <p>Fix errors, slow PCs, software issues, updates, and general tech problems.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">📶</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M5 12.5a10 10 0 0 1 14 0"/>
+                <path d="M8.5 15.5a5 5 0 0 1 7 0"/>
+                <path d="M12 19h.01"/>
+              </svg>
+            </div>
             <h3>Wi-Fi & Network Setup</h3>
             <p>Router setup, better coverage, repeaters, and stable connections for home/office.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🖨️</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 9V4h12v5"/>
+                <rect x="6" y="14" width="12" height="6"/>
+                <path d="M6 12h.01"/>
+                <path d="M18 12h.01"/>
+              </svg>
+            </div>
             <h3>Computer & Printer Setup</h3>
             <p>New PC setup, printer install, sharing on Wi-Fi, and troubleshooting printing issues.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">💾</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="6" width="18" height="12"/>
+                <path d="M7 10h.01M11 10h.01M15 10h.01"/>
+                <path d="M7 14h10"/>
+              </svg>
+            </div>
             <h3>Hardware Upgrades</h3>
-            <p>RAM/SSD upgrades, clean installs, performance tuning, and basic maintenance.</p>
+            <p>RAM / SSD upgrades, clean installs, performance tuning, and basic maintenance.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">🌐</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+                <path d="M3 8h18"/>
+                <path d="M8 20v0"/>
+              </svg>
+            </div>
             <h3>Business Websites</h3>
             <p>Fast, responsive websites for small businesses — built to convert on mobile.</p>
           </article>
 
           <article class="card">
-            <div class="card-icon">✅</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 12l2 2 4-4"/>
+                <rect x="4" y="4" width="16" height="16" rx="2"/>
+              </svg>
+            </div>
             <h3>Fix / Setup / Build</h3>
             <p>We resolve the problem or deliver your website with support.</p>
           </article>
@@ -230,21 +270,39 @@
 
         <div class="grid reveal">
           <article class="card">
-            <div class="card-icon">🏪</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 19h16"/>
+                <path d="M6 19V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10"/>
+                <path d="M9 19v-6h6v6"/>
+              </svg>
+            </div>
             <h3>Demo #1 — Small Business</h3>
             <p>Service-based layout (hair salon, cleaning, etc.).</p>
             <a class="link" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions,%20please%20send%20me%20Demo%20%231%20link." target="_blank" rel="noopener">Request demo link →</a>
           </article>
 
           <article class="card">
-            <div class="card-icon">👤</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="8" r="3"/>
+                <path d="M4 20a8 8 0 0 1 16 0"/>
+              </svg>
+            </div>
             <h3>Demo #2 — Portfolio</h3>
             <p>Personal brand style (photographer, DJ, etc.).</p>
             <a class="link" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions,%20please%20send%20me%20Demo%20%232%20link." target="_blank" rel="noopener">Request demo link →</a>
           </article>
 
           <article class="card">
-            <div class="card-icon">🧾</div>
+            <div class="service-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M7 4h10"/>
+                <path d="M7 8h10"/>
+                <path d="M7 12h10"/>
+                <path d="M7 16h10"/>
+              </svg>
+            </div>
             <h3>Demo #3 — Business Info</h3>
             <p>Simple brochure site (about, services, contact).</p>
             <a class="link" href="https://wa.me/27814737476?text=Hi%20Nemadzivhanani%20IT%20Solutions,%20please%20send%20me%20Demo%20%233%20link." target="_blank" rel="noopener">Request demo link →</a>
