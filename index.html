@@ -20,8 +20,7 @@
         </div>
       </a>
 
-      <!-- Desktop nav -->
-      <nav class="nav-links" aria-label="Primary">
+      <nav class="nav-links" aria-label="Primary" id="primaryNav">
         <a href="#services">Services</a>
         <a href="#why">Why us</a>
         <a href="#process">How we work</a>
@@ -30,8 +29,8 @@
       </nav>
 
       <div class="nav-actions">
-        <button class="icon-btn" id="navToggle" aria-label="Open menu" aria-expanded="false" title="Menu">
-          <span class="icon" aria-hidden="true">☰</span>
+        <button class="icon-btn" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+          <span aria-hidden="true">☰</span>
         </button>
 
         <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
@@ -41,39 +40,43 @@
         <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
       </div>
     </div>
-
-    <!-- Mobile menu -->
-    <div class="mobile-menu" id="mobileMenu" hidden>
-      <div class="container mobile-menu-inner">
-        <a href="#services">Services</a>
-        <a href="#why">Why us</a>
-        <a href="#process">How we work</a>
-        <a href="#examples">Examples</a>
-        <a href="#contact">Contact</a>
-
-        <div class="mobile-menu-cta">
-          <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
-          <a class="btn btn-ghost" href="tel:+27814737476">Call</a>
-          <a class="btn btn-ghost" href="mailto:info@nemadzivhananiit.co.za">Email</a>
-        </div>
-      </div>
-    </div>
   </header>
+
+  <!-- Mobile menu -->
+  <div class="backdrop" id="backdrop" hidden></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-label="Mobile menu" hidden>
+    <div class="mobile-menu-head">
+      <div class="mobile-title">Menu</div>
+      <button class="icon-btn" id="menuClose" aria-label="Close menu">✕</button>
+    </div>
+    <div class="mobile-menu-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#process">How we work</a>
+      <a href="#examples">Examples</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="mobile-menu-actions">
+      <a class="btn btn-primary w-100" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn btn-ghost w-100" href="tel:+27814737476">Call</a>
+      <a class="btn btn-ghost w-100" href="mailto:info@nemadzivhananiit.co.za">Email</a>
+    </div>
+  </aside>
 
   <!-- Main -->
   <main>
     <!-- Hero -->
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
 
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <div class="pill">IT Support & Solutions</div>
-          <h1>Reliable IT support for home & small business.</h1>
+
+          <h1>Reliable IT support for home &amp; small business.</h1>
 
           <p class="lead">
-            We help with troubleshooting, Wi-Fi & network setup, computers & printers,
+            We help with troubleshooting, Wi-Fi &amp; network setup, computers &amp; printers,
             hardware upgrades (RAM/SSD), and clean, mobile-friendly business websites.
           </p>
 
@@ -121,72 +124,54 @@
 
         <div class="grid reveal">
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 15l-3.5 3.5a2.1 2.1 0 0 1-3-3L9 12"/>
-                <path d="M15 12l3.5-3.5a2.1 2.1 0 0 0-3-3L12 9"/>
-                <path d="M8 16l8-8"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <!-- Wrench -->
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M14.7 6.3a5.5 5.5 0 0 0-7.5 7.5l-4.3 4.3a1 1 0 0 0 1.4 1.4l4.3-4.3a5.5 5.5 0 0 0 7.5-7.5l-2.5 2.5-2.8-.7-.7-2.8 2.6-2.4z"/></svg>
             </div>
-            <h3>IT Support & Troubleshooting</h3>
+            <h3>IT Support &amp; Troubleshooting</h3>
             <p>Fix errors, slow PCs, software issues, updates, and general tech problems.</p>
           </article>
 
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M5 12.5a10 10 0 0 1 14 0"/>
-                <path d="M8.5 15.5a5 5 0 0 1 7 0"/>
-                <path d="M12 19h.01"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <!-- WiFi -->
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M12 18.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm-6-3.7a9.5 9.5 0 0 1 12 0 1 1 0 0 0 1.3-1.5 11.5 11.5 0 0 0-14.6 0 1 1 0 1 0 1.3 1.5zm-3.5-4.3a15 15 0 0 1 19 0 1 1 0 0 0 1.3-1.5 17 17 0 0 0-21.6 0 1 1 0 1 0 1.3 1.5z"/></svg>
             </div>
-            <h3>Wi-Fi & Network Setup</h3>
+            <h3>Wi-Fi &amp; Network Setup</h3>
             <p>Router setup, better coverage, repeaters, and stable connections for home/office.</p>
           </article>
 
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M6 9V4h12v5"/>
-                <rect x="6" y="14" width="12" height="6"/>
-                <path d="M6 12h.01"/>
-                <path d="M18 12h.01"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <!-- Printer -->
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M6 7V3h12v4H6zm12 10v4H6v-4h12zm2-8H4a2 2 0 0 0-2 2v6h4v-3h12v3h4v-6a2 2 0 0 0-2-2z"/></svg>
             </div>
-            <h3>Computer & Printer Setup</h3>
+            <h3>Computer &amp; Printer Setup</h3>
             <p>New PC setup, printer install, sharing on Wi-Fi, and troubleshooting printing issues.</p>
           </article>
 
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="6" width="18" height="12"/>
-                <path d="M7 10h.01M11 10h.01M15 10h.01"/>
-                <path d="M7 14h10"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <!-- SSD -->
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm2 4h6v2H9V7zm0 4h6v2H9v-2zm0 4h6v2H9v-2z"/></svg>
             </div>
             <h3>Hardware Upgrades</h3>
             <p>RAM / SSD upgrades, clean installs, performance tuning, and basic maintenance.</p>
           </article>
 
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <rect x="3" y="4" width="18" height="16" rx="2"/>
-                <path d="M3 8h18"/>
-                <path d="M8 20v0"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <!-- Globe -->
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm7.9 9h-3.2a15.3 15.3 0 0 0-1.1-5A8.1 8.1 0 0 1 19.9 11zM12 4c1.1 1.5 2 4 2.3 7H9.7C10 8 10.9 5.5 12 4zM4.1 13h3.2c.2 1.8.7 3.5 1.1 5A8.1 8.1 0 0 1 4.1 13zm3.2-2H4.1A8.1 8.1 0 0 1 8.4 6c-.5 1.5-.9 3.2-1.1 5zm2.4 2h4.6c-.3 3-1.2 5.5-2.3 7-1.1-1.5-2-4-2.3-7zm7 0h3.2a8.1 8.1 0 0 1-4.3 5c.5-1.5.9-3.2 1.1-5z"/></svg>
             </div>
             <h3>Business Websites</h3>
             <p>Fast, responsive websites for small businesses — built to convert on mobile.</p>
           </article>
 
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M9 12l2 2 4-4"/>
-                <rect x="4" y="4" width="16" height="16" rx="2"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <!-- Check -->
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z"/></svg>
             </div>
             <h3>Fix / Setup / Build</h3>
             <p>We resolve the problem or deliver your website with support.</p>
@@ -213,7 +198,7 @@
             <p>Most clients view on phones — we design for speed and clarity.</p>
           </div>
           <div class="note">
-            <h3>Affordable & clear</h3>
+            <h3>Affordable &amp; clear</h3>
             <p>No tech jargon. We explain the fix and the cost before we start.</p>
           </div>
           <div class="note">
@@ -270,12 +255,8 @@
 
         <div class="grid reveal">
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M4 19h16"/>
-                <path d="M6 19V9a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v10"/>
-                <path d="M9 19v-6h6v6"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6zm2 0v12h12V6H6z"/></svg>
             </div>
             <h3>Demo #1 — Small Business</h3>
             <p>Service-based layout (hair salon, cleaning, etc.).</p>
@@ -283,11 +264,8 @@
           </article>
 
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="8" r="3"/>
-                <path d="M4 20a8 8 0 0 1 16 0"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5z"/></svg>
             </div>
             <h3>Demo #2 — Portfolio</h3>
             <p>Personal brand style (photographer, DJ, etc.).</p>
@@ -295,13 +273,8 @@
           </article>
 
           <article class="card">
-            <div class="service-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M7 4h10"/>
-                <path d="M7 8h10"/>
-                <path d="M7 12h10"/>
-                <path d="M7 16h10"/>
-              </svg>
+            <div class="card-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="svg-ic"><path d="M6 2h9l3 3v17a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm8 1v4h4"/></svg>
             </div>
             <h3>Demo #3 — Business Info</h3>
             <p>Simple brochure site (about, services, contact).</p>

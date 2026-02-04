@@ -1,84 +1,68 @@
-(() => {
-  "use strict";
+// Remove no-js class
+document.documentElement.classList.remove("no-js");
 
-  // Footer year
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+// Year
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Theme toggle (saved + system default)
-  const themeToggle = document.getElementById("themeToggle");
-  const themeIcon = themeToggle ? themeToggle.querySelector(".icon") : null;
-  const key = "nits-theme";
+// Theme (auto + toggle)
+const root = document.documentElement;
+const toggle = document.getElementById("themeToggle");
+const savedTheme = localStorage.getItem("theme");
 
-  const systemTheme = () =>
-    window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+function setTheme(mode) {
+  root.setAttribute("data-theme", mode);
+  localStorage.setItem("theme", mode);
+  if (toggle) toggle.querySelector(".icon").textContent = mode === "dark" ? "☀" : "☾";
+}
 
-  const applyTheme = (mode) => {
-    document.documentElement.setAttribute("data-theme", mode);
-    if (themeIcon) themeIcon.textContent = mode === "dark" ? "☀" : "☾";
-  };
+if (savedTheme) {
+  setTheme(savedTheme);
+} else {
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  setTheme(prefersDark ? "dark" : "light");
+}
 
-  const saved = localStorage.getItem(key);
-  applyTheme(saved || systemTheme());
+toggle?.addEventListener("click", () => {
+  const current = root.getAttribute("data-theme") || "light";
+  setTheme(current === "dark" ? "light" : "dark");
+});
 
-  themeToggle?.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme") || "light";
-    const next = current === "dark" ? "light" : "dark";
-    localStorage.setItem(key, next);
-    applyTheme(next);
+// Mobile menu
+const menuBtn = document.getElementById("menuBtn");
+const menuClose = document.getElementById("menuClose");
+const mobileMenu = document.getElementById("mobileMenu");
+const backdrop = document.getElementById("backdrop");
+
+function openMenu() {
+  mobileMenu.hidden = false;
+  backdrop.hidden = false;
+  menuBtn?.setAttribute("aria-expanded", "true");
+}
+function closeMenu() {
+  mobileMenu.hidden = true;
+  backdrop.hidden = true;
+  menuBtn?.setAttribute("aria-expanded", "false");
+}
+
+menuBtn?.addEventListener("click", openMenu);
+menuClose?.addEventListener("click", closeMenu);
+backdrop?.addEventListener("click", closeMenu);
+
+// close menu when clicking a link
+mobileMenu?.querySelectorAll("a").forEach(a => {
+  a.addEventListener("click", closeMenu);
+});
+
+// Lightweight reveal on scroll
+const revealEls = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver((entries) => {
+  entries.forEach((e) => {
+    if (e.isIntersecting) {
+      e.target.classList.add("is-visible");
+      io.unobserve(e.target);
+    }
   });
+}, { threshold: 0.12 });
 
-  // Mobile menu
-  const navToggle = document.getElementById("navToggle");
-  const mobileMenu = document.getElementById("mobileMenu");
-
-  const closeMenu = () => {
-    document.body.classList.remove("menu-open");
-    navToggle?.setAttribute("aria-expanded", "false");
-    if (mobileMenu) mobileMenu.hidden = true;
-  };
-
-  const openMenu = () => {
-    document.body.classList.add("menu-open");
-    navToggle?.setAttribute("aria-expanded", "true");
-    if (mobileMenu) mobileMenu.hidden = false;
-  };
-
-  // Init hidden state
-  if (mobileMenu) mobileMenu.hidden = true;
-
-  navToggle?.addEventListener("click", () => {
-    const isOpen = document.body.classList.contains("menu-open");
-    if (isOpen) closeMenu();
-    else openMenu();
-  });
-
-  // Close when clicking any mobile menu link
-  document.querySelectorAll("#mobileMenu a").forEach((a) => {
-    a.addEventListener("click", closeMenu);
-  });
-
-  // ESC close
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  // Reveal on scroll
-  const els = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          io.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    els.forEach((el) => io.observe(el));
-  } else {
-    els.forEach((el) => el.classList.add("is-visible"));
-  }
-})();
+revealEls.forEach(el => io.observe(el));
