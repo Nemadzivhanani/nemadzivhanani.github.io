@@ -9,9 +9,9 @@
 </head>
 
 <body>
-  <!-- Top bar -->
-  <header class="header">
-    <div class="container nav">
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Nemadzivhanani IT Solutions">
         <img class="brand-logo" src="assets/logo.png" alt="Nemadzivhanani IT Solutions logo" />
         <div class="brand-text">
@@ -20,30 +20,55 @@
         </div>
       </a>
 
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#why">Why us</a>
-        <a href="#process">How we work</a>
-        <a href="#examples">Examples</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
-          <span class="icon" aria-hidden="true">☾</span>
+      <nav class="nav" aria-label="Primary">
+        <button class="icon-btn nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span aria-hidden="true">☰</span>
         </button>
-        <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+
+        <div class="nav-links" id="desktopLinks">
+          <a href="#services">Services</a>
+          <a href="#why">Why us</a>
+          <a href="#process">How we work</a>
+          <a href="#examples">Examples</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <div class="nav-actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
+            <span class="theme-icon" aria-hidden="true">☾</span>
+          </button>
+          <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" hidden>
+      <div class="container mobile-menu-inner">
+        <a href="#services" class="m-link">Services</a>
+        <a href="#why" class="m-link">Why us</a>
+        <a href="#process" class="m-link">How we work</a>
+        <a href="#examples" class="m-link">Examples</a>
+        <a href="#contact" class="m-link">Contact</a>
+
+        <div class="mobile-actions">
+          <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+          <a class="btn btn-ghost" href="tel:+27814737476">Call</a>
+          <a class="btn btn-ghost" href="mailto:info@nemadzivhananiit.co.za">Email</a>
+        </div>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <main id="top">
+  <main>
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy reveal">
           <div class="pill">IT Support & Solutions</div>
+
           <h1>Reliable IT support for home & small business.</h1>
+
           <p class="lead">
             We help with troubleshooting, Wi-Fi & network setup, computers & printers,
             hardware upgrades (RAM/SSD), and clean, mobile-friendly business websites.
@@ -56,15 +81,13 @@
           </div>
 
           <div class="micro">
-            <span>Soweto</span>
-            <span class="dot">•</span>
-            <span>Mon–Fri (09:00–17:00)</span>
-            <span class="dot">•</span>
+            <span>Soweto</span><span class="dot">•</span>
+            <span>Mon–Fri (09:00–17:00)</span><span class="dot">•</span>
             <span>On-site or remote</span>
           </div>
         </div>
 
-        <aside class="hero-panel reveal">
+        <aside class="hero-card reveal">
           <h3>Quick help checklist</h3>
           <ul class="checklist">
             <li>Wi-Fi slow or disconnecting</li>
@@ -73,13 +96,15 @@
             <li>RAM/SSD upgrade request</li>
             <li>Need a simple business website</li>
           </ul>
-          <div class="panel-actions">
+
+          <div class="hero-card-actions">
             <a class="btn btn-soft" href="mailto:info@nemadzivhananiit.co.za">Email us</a>
             <a class="btn btn-soft" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
           </div>
         </aside>
       </div>
-      <div class="hero-divider"></div>
+
+      <div class="hero-divider" aria-hidden="true"></div>
     </section>
 
     <!-- Services -->
@@ -112,7 +137,7 @@
           <article class="card">
             <div class="card-icon">💾</div>
             <h3>Hardware Upgrades</h3>
-            <p>RAM / SSD upgrades, clean installs, performance tuning, and basic maintenance.</p>
+            <p>RAM/SSD upgrades, clean installs, performance tuning, and basic maintenance.</p>
           </article>
 
           <article class="card">
