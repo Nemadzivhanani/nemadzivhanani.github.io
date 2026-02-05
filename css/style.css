@@ -219,7 +219,7 @@ img { max-width: 100%; display: block; }
 
   /* Hero Mobile Fixes */
   .hero { text-align: left; padding-top: 100px; padding-bottom: 50px; min-height: auto; height: auto; }
-  .hero h1 { font-size: 32px; margin-bottom: 15px; } 
+  .hero h1 { font-size: 26px; margin-bottom: 15px; max-width: 90%; } 
   .lead { font-size: 16px; margin-bottom: 25px; } 
   
   /* Stacked Buttons */
