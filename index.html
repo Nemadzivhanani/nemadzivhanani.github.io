@@ -13,7 +13,7 @@
   <!-- Header -->
   <header class="header">
     <div class="container nav">
-      <!-- Brand (left) -->
+      <!-- Brand -->
       <a class="brand" href="#top" aria-label="Nemadzivhanani IT Solutions">
         <img class="brand-logo" src="assets/logo.png" alt="Nemadzivhanani IT Solutions logo" />
         <div class="brand-text">
@@ -22,7 +22,7 @@
         </div>
       </a>
 
-      <!-- Desktop nav (center) -->
+      <!-- Desktop nav -->
       <nav class="nav-links" aria-label="Primary">
         <a href="#services">Services</a>
         <a href="#why">Why us</a>
@@ -31,35 +31,49 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <!-- Actions (right) -->
-      <div class="nav-actions">
-        <!-- Mobile menu button -->
-        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-          <span aria-hidden="true">☰</span>
-        </button>
-
-        <!-- Theme toggle -->
+      <!-- Desktop actions -->
+      <div class="nav-actions desktop-actions">
         <button class="icon-btn" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">
           <span class="icon" aria-hidden="true">☾</span>
         </button>
-
-        <!-- WhatsApp -->
         <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+
+      <!-- Mobile actions: hamburger ONLY -->
+      <div class="nav-actions mobile-actions">
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+          <span aria-hidden="true">☰</span>
+        </button>
       </div>
     </div>
 
-    <!-- Mobile menu panel -->
+    <!-- Mobile menu -->
     <div class="mobile-menu" id="mobileMenu" hidden>
       <div class="mobile-menu-inner">
+        <div class="mobile-menu-top">
+          <strong>Menu</strong>
+          <button class="icon-btn" id="menuCloseBtn" aria-label="Close menu">
+            <span aria-hidden="true">✕</span>
+          </button>
+        </div>
+
         <a href="#services" class="mobile-link">Services</a>
         <a href="#why" class="mobile-link">Why us</a>
         <a href="#process" class="mobile-link">How we work</a>
         <a href="#examples" class="mobile-link">Examples</a>
         <a href="#contact" class="mobile-link">Contact</a>
 
+        <div class="mobile-divider"></div>
+
+        <!-- Theme toggle INSIDE menu (clean mobile header) -->
+        <button class="btn btn-soft mobile-theme" id="themeToggleMobile" type="button">
+          Toggle light / dark
+        </button>
+
         <div class="mobile-cta">
           <a class="btn btn-primary" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
           <a class="btn btn-ghost" href="tel:+27814737476">Call</a>
+          <a class="btn btn-ghost" href="mailto:info@nemadzivhananiit.co.za">Email</a>
         </div>
       </div>
     </div>
@@ -68,9 +82,10 @@
   <!-- Hero -->
   <main id="top">
     <section class="hero">
-      <!-- Hero background image (optional) -->
-      <div class="hero-bg" aria-hidden="true">
-        <img src="assets/hero.jpg" alt="" />
+      <!-- ONE hero image -->
+      <div class="hero-media" aria-hidden="true">
+        <img src="assets/hero.jpg" alt="" loading="eager" />
+        <div class="hero-overlay"></div>
       </div>
 
       <div class="container hero-grid">
@@ -98,6 +113,7 @@
           </div>
         </div>
 
+        <!-- Desktop-only panel (we hide this on mobile to reduce clutter) -->
         <aside class="hero-panel reveal">
           <h3>Quick help checklist</h3>
           <ul class="checklist">
@@ -107,7 +123,6 @@
             <li>RAM/SSD upgrade request</li>
             <li>Need a simple business website</li>
           </ul>
-
           <div class="panel-actions">
             <a class="btn btn-soft" href="mailto:info@nemadzivhananiit.co.za">Email us</a>
             <a class="btn btn-soft" href="https://wa.me/27814737476" target="_blank" rel="noopener">WhatsApp</a>
@@ -129,10 +144,7 @@
         <div class="grid reveal">
           <article class="card">
             <div class="card-icon" aria-hidden="true">
-              <!-- Simple navy SVG icon -->
-              <svg viewBox="0 0 24 24" width="26" height="26">
-                <path fill="currentColor" d="M7 2h10a2 2 0 0 1 2 2v5h-2V4H7v16h10v-5h2v5a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm11 8 4 2-4 2v-1h-6v-2h6v-1Z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" class="svg-icon"><path d="M4 4h16v10H4V4Zm2 2v6h12V6H6Zm-2 12h16v2H4v-2Z"/></svg>
             </div>
             <h3>IT Support & Troubleshooting</h3>
             <p>Fix errors, slow PCs, software issues, updates, and general tech problems.</p>
@@ -140,9 +152,7 @@
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26">
-                <path fill="currentColor" d="M12 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-6.36-2.64 1.41 1.41A7 7 0 0 1 12 15a7 7 0 0 1 4.95 2.77l1.41-1.41A9 9 0 0 0 12 13a9 9 0 0 0-6.36 2.36ZM12 5a13 13 0 0 0-9.19 3.81l1.41 1.41A11 11 0 0 1 12 7a11 11 0 0 1 7.78 3.22l1.41-1.41A13 13 0 0 0 12 5Z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm-6.36-2.64 1.41 1.41A7 7 0 0 1 12 15a7 7 0 0 1 4.95 2.77l1.41-1.41A9 9 0 0 0 12 13a9 9 0 0 0-6.36 2.36ZM12 5a13 13 0 0 0-9.19 3.81l1.41 1.41A11 11 0 0 1 12 7a11 11 0 0 1 7.78 3.22l1.41-1.41A13 13 0 0 0 12 5Z"/></svg>
             </div>
             <h3>Wi-Fi & Network Setup</h3>
             <p>Router setup, better coverage, repeaters, and stable connections for home/office.</p>
@@ -150,9 +160,7 @@
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26">
-                <path fill="currentColor" d="M6 7V3h12v4h2a2 2 0 0 1 2 2v6h-4v4H6v-4H2V9a2 2 0 0 1 2-2h2Zm2-2v2h8V5H8Zm8 12v-4H8v4h8Zm2-6h2V9h-2v2Z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" class="svg-icon"><path d="M6 7V3h12v4h2a2 2 0 0 1 2 2v6h-4v4H6v-4H2V9a2 2 0 0 1 2-2h2Zm2-2v2h8V5H8Zm8 12v-4H8v4h8Zm2-6h2V9h-2v2Z"/></svg>
             </div>
             <h3>Computer & Printer Setup</h3>
             <p>New PC setup, printer install, sharing on Wi-Fi, and troubleshooting printing issues.</p>
@@ -160,9 +168,7 @@
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26">
-                <path fill="currentColor" d="M5 7h14v10H5V7Zm2 2v6h10V9H7Zm-4 3h2v2H3v-2Zm18 0h2v2h-2v-2Z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" class="svg-icon"><path d="M5 7h14v10H5V7Zm2 2v6h10V9H7Zm-4 3h2v2H3v-2Zm18 0h2v2h-2v-2Z"/></svg>
             </div>
             <h3>Hardware Upgrades</h3>
             <p>RAM / SSD upgrades, clean installs, performance tuning, and basic maintenance.</p>
@@ -170,9 +176,7 @@
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26">
-                <path fill="currentColor" d="M4 4h16v12H4V4Zm2 2v8h12V6H6Zm-2 14h16v2H4v-2Z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" class="svg-icon"><path d="M4 4h16v12H4V4Zm2 2v8h12V6H6Zm-2 14h16v2H4v-2Z"/></svg>
             </div>
             <h3>Business Websites</h3>
             <p>Fast, responsive websites for small businesses — built to convert on mobile.</p>
@@ -180,9 +184,7 @@
 
           <article class="card">
             <div class="card-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="26" height="26">
-                <path fill="currentColor" d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-1 14-4-4 1.41-1.41L11 13.17l5.59-5.58L18 9Z"/>
-              </svg>
+              <svg viewBox="0 0 24 24" class="svg-icon"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2Zm-1 14-4-4 1.41-1.41L11 13.17l5.59-5.58L18 9Z"/></svg>
             </div>
             <h3>Fix / Setup / Build</h3>
             <p>We resolve the problem or deliver your website with support.</p>

@@ -1,68 +1,75 @@
-// Remove no-js class
-document.documentElement.classList.remove("no-js");
+(() => {
+  const root = document.documentElement;
 
-// Year
-const yearEl = document.getElementById("year");
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+  // ===== Theme =====
+  const THEME_KEY = "nits_theme";
 
-// Theme (auto + toggle)
-const root = document.documentElement;
-const toggle = document.getElementById("themeToggle");
-const savedTheme = localStorage.getItem("theme");
+  function setTheme(theme) {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem(THEME_KEY, theme);
+  }
 
-function setTheme(mode) {
-  root.setAttribute("data-theme", mode);
-  localStorage.setItem("theme", mode);
-  if (toggle) toggle.querySelector(".icon").textContent = mode === "dark" ? "☀" : "☾";
-}
+  function getPreferredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === "light" || saved === "dark") return saved;
+    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  }
 
-if (savedTheme) {
-  setTheme(savedTheme);
-} else {
-  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-  setTheme(prefersDark ? "dark" : "light");
-}
+  // Apply theme on load
+  setTheme(getPreferredTheme());
 
-toggle?.addEventListener("click", () => {
-  const current = root.getAttribute("data-theme") || "light";
-  setTheme(current === "dark" ? "light" : "dark");
-});
+  // Desktop toggle (if exists)
+  const themeToggle = document.getElementById("themeToggle");
+  // Mobile toggle in menu
+  const themeToggleMobile = document.getElementById("themeToggleMobile");
 
-// Mobile menu
-const menuBtn = document.getElementById("menuBtn");
-const menuClose = document.getElementById("menuClose");
-const mobileMenu = document.getElementById("mobileMenu");
-const backdrop = document.getElementById("backdrop");
+  function toggleTheme() {
+    const current = root.getAttribute("data-theme") || "light";
+    setTheme(current === "dark" ? "light" : "dark");
+  }
 
-function openMenu() {
-  mobileMenu.hidden = false;
-  backdrop.hidden = false;
-  menuBtn?.setAttribute("aria-expanded", "true");
-}
-function closeMenu() {
-  mobileMenu.hidden = true;
-  backdrop.hidden = true;
-  menuBtn?.setAttribute("aria-expanded", "false");
-}
+  if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
+  if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
 
-menuBtn?.addEventListener("click", openMenu);
-menuClose?.addEventListener("click", closeMenu);
-backdrop?.addEventListener("click", closeMenu);
+  // ===== Mobile menu =====
+  const menuBtn = document.getElementById("menuBtn");
+  const menuCloseBtn = document.getElementById("menuCloseBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
 
-// close menu when clicking a link
-mobileMenu?.querySelectorAll("a").forEach(a => {
-  a.addEventListener("click", closeMenu);
-});
+  function openMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.hidden = false;
+    menuBtn?.setAttribute("aria-expanded", "true");
+    document.body.style.overflow = "hidden";
+  }
 
-// Lightweight reveal on scroll
-const revealEls = document.querySelectorAll(".reveal");
-const io = new IntersectionObserver((entries) => {
-  entries.forEach((e) => {
-    if (e.isIntersecting) {
-      e.target.classList.add("is-visible");
-      io.unobserve(e.target);
-    }
+  function closeMenu() {
+    if (!mobileMenu) return;
+    mobileMenu.hidden = true;
+    menuBtn?.setAttribute("aria-expanded", "false");
+    document.body.style.overflow = "";
+  }
+
+  menuBtn?.addEventListener("click", () => {
+    const isOpen = mobileMenu && mobileMenu.hidden === false;
+    isOpen ? closeMenu() : openMenu();
   });
-}, { threshold: 0.12 });
 
-revealEls.forEach(el => io.observe(el));
+  menuCloseBtn?.addEventListener("click", closeMenu);
+
+  // Close menu when clicking a menu link
+  document.querySelectorAll(".mobile-link").forEach((a) => {
+    a.addEventListener("click", closeMenu);
+  });
+
+  // Close menu on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeMenu();
+  });
+
+  // Footer year
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+})();
