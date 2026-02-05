@@ -151,8 +151,9 @@ img { max-width: 100%; display: block; }
 /* Why Us Items */
 .feature-item { 
   background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); 
-  padding: 25px; border-radius: var(--radius);
+  padding: 25px; border-radius: var(--radius); position: relative;
 }
+.feature-icon { margin-bottom: 15px; } /* Space for new SVGs */
 .feature-item h4 { font-size: 18px; margin-bottom: 10px; color: white; }
 .feature-item p { font-size: 15px; color: #cbd5e1; }
 
@@ -167,10 +168,10 @@ img { max-width: 100%; display: block; }
   font-weight: bold; margin-bottom: 15px; font-size: 16px;
 }
 
-/* Trust Bar */
+/* Trust Bar (Desktop) */
 .trust-bar { background: var(--primary-blue); color: white; padding: 20px 0; }
 .trust-grid { display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; }
-.trust-item { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.trust-item { display: flex; align-items: center; gap: 10px; font-weight: 600; white-space: nowrap; }
 
 /* Contact Box */
 .contact-box {
@@ -218,15 +219,32 @@ img { max-width: 100%; display: block; }
 
   /* Hero Mobile Fixes */
   .hero { text-align: left; padding-top: 100px; padding-bottom: 50px; min-height: auto; height: auto; }
-  .hero h1 { font-size: 32px; margin-bottom: 15px; } /* SMALLER TEXT */
-  .lead { font-size: 16px; margin-bottom: 25px; } /* SMALLER TEXT */
+  .hero h1 { font-size: 32px; margin-bottom: 15px; } 
+  .lead { font-size: 16px; margin-bottom: 25px; } 
   
   /* Stacked Buttons */
   .hero-btns { flex-direction: column; width: 100%; }
   .btn { width: 100%; }
 
   /* Grids Mobile */
-  .services-grid, .grid-3, .grid-2, .steps-grid, .trust-grid { grid-template-columns: 1fr; gap: 15px; }
+  .services-grid, .grid-3, .grid-2, .steps-grid { grid-template-columns: 1fr; gap: 15px; }
+  
+  /* --- FIX: TRUST BAR ON ONE LINE --- */
+  .trust-grid { 
+    flex-wrap: nowrap; /* Force single line */
+    justify-content: space-around; /* Spread them out */
+    gap: 5px; /* Tiny gap */
+  }
+  .trust-item {
+    font-size: 11px; /* Very small text */
+    flex-direction: column; /* Stack icon on top of text to save width */
+    gap: 5px;
+    text-align: center;
+  }
+  .trust-item .icon-svg {
+    width: 20px; /* Smaller icon */
+    height: 20px;
+  }
   
   /* Contact Mobile */
   .contact-box { grid-template-columns: 1fr; }
