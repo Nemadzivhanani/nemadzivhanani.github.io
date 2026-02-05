@@ -1,75 +1,33 @@
-(() => {
-  const root = document.documentElement;
-
-  // ===== Theme =====
-  const THEME_KEY = "nits_theme";
-
-  function setTheme(theme) {
-    root.setAttribute("data-theme", theme);
-    localStorage.setItem(THEME_KEY, theme);
-  }
-
-  function getPreferredTheme() {
-    const saved = localStorage.getItem(THEME_KEY);
-    if (saved === "light" || saved === "dark") return saved;
-    return window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-  }
-
-  // Apply theme on load
-  setTheme(getPreferredTheme());
-
-  // Desktop toggle (if exists)
-  const themeToggle = document.getElementById("themeToggle");
-  // Mobile toggle in menu
-  const themeToggleMobile = document.getElementById("themeToggleMobile");
-
-  function toggleTheme() {
-    const current = root.getAttribute("data-theme") || "light";
-    setTheme(current === "dark" ? "light" : "dark");
-  }
-
-  if (themeToggle) themeToggle.addEventListener("click", toggleTheme);
-  if (themeToggleMobile) themeToggleMobile.addEventListener("click", toggleTheme);
-
-  // ===== Mobile menu =====
-  const menuBtn = document.getElementById("menuBtn");
-  const menuCloseBtn = document.getElementById("menuCloseBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
+document.addEventListener('DOMContentLoaded', () => {
+  
+  // 1. Mobile Menu Logic
+  const menuBtn = document.getElementById('menuBtn');
+  const closeMenuBtn = document.getElementById('closeMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = document.querySelectorAll('.m-link');
 
   function openMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.hidden = false;
-    menuBtn?.setAttribute("aria-expanded", "true");
-    document.body.style.overflow = "hidden";
+    mobileMenu.classList.add('active');
+    document.body.style.overflow = 'hidden'; // Stop background scrolling
   }
 
   function closeMenu() {
-    if (!mobileMenu) return;
-    mobileMenu.hidden = true;
-    menuBtn?.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
+    mobileMenu.classList.remove('active');
+    document.body.style.overflow = ''; // Restore scrolling
   }
 
-  menuBtn?.addEventListener("click", () => {
-    const isOpen = mobileMenu && mobileMenu.hidden === false;
-    isOpen ? closeMenu() : openMenu();
+  if (menuBtn) menuBtn.addEventListener('click', openMenu);
+  if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
+
+  // Close menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
-  menuCloseBtn?.addEventListener("click", closeMenu);
+  // 2. Footer Year Update
+  const yearSpan = document.getElementById('year');
+  if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+  }
 
-  // Close menu when clicking a menu link
-  document.querySelectorAll(".mobile-link").forEach((a) => {
-    a.addEventListener("click", closeMenu);
-  });
-
-  // Close menu on ESC
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeMenu();
-  });
-
-  // Footer year
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-})();
+});
