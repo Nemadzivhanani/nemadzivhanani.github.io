@@ -4,8 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Nemadzivhanani IT Solutions</title>
-  <meta name="description" content="Reliable IT Support & Solutions for home and small business in Soweto." />
-  
+  <meta name="description" content="Reliable IT Support, Wi-Fi Setup & Web Design in Soweto." />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -13,10 +12,9 @@
 
   <header class="header">
     <div class="container nav-container">
-      
       <a href="#top" class="brand">
         <div class="logo-box">
-          <img src="assets/logo.png" alt="Nemadzivhanani Logo" class="logo-img" />
+          <img src="assets/logo.png" alt="Logo" class="logo-img" />
         </div>
         <div class="brand-text">
           <span class="company-name">NEMADZIVHANANI</span>
@@ -26,20 +24,17 @@
 
       <nav class="desktop-nav">
         <a href="#services">Services</a>
-        <a href="#why-us">Why Us</a>
+        <a href="#how-it-works">Process</a>
+        <a href="#examples">Work</a>
         <a href="#contact">Contact</a>
       </nav>
 
       <div class="nav-actions">
         <a href="#contact" class="btn btn-primary desktop-only">Get Consultation</a>
-        
         <button id="menuBtn" class="burger-btn" aria-label="Open Menu">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
       </div>
-
     </div>
   </header>
 
@@ -49,19 +44,14 @@
         <span class="menu-title">Menu</span>
         <button id="closeMenuBtn" class="close-btn">&times;</button>
       </div>
-      
       <nav class="mobile-links">
         <a href="#services" class="m-link">Services</a>
-        <a href="#why-us" class="m-link">Why Choose Us</a>
-        <a href="#contact" class="m-link">Contact</a>
+        <a href="#how-it-works" class="m-link">How We Work</a>
+        <a href="#examples" class="m-link">Example Websites</a>
+        <a href="#contact" class="m-link">Contact Us</a>
       </nav>
-      
       <div class="menu-footer">
         <a href="#contact" class="btn btn-primary full-width">Get Free Consultation</a>
-        <div class="contact-info">
-           <p><strong>Call/WhatsApp:</strong> 081 473 7476</p>
-           <p><strong>Email:</strong> info@nemadzivhananiit.co.za</p>
-        </div>
       </div>
     </div>
   </div>
@@ -69,18 +59,13 @@
   <main>
     <section id="top" class="hero">
       <div class="hero-bg">
-        <img src="assets/hero.jpg" alt="Server Room Background" />
+        <img src="assets/hero.jpg" alt="Tech Background" />
         <div class="hero-overlay"></div>
       </div>
-
       <div class="container hero-content">
         <div class="badge">Trusted IT Partner</div>
         <h1>Reliable IT Support for<br>Home & Business.</h1>
-        <p class="lead">
-          Your one-stop-shop for troubleshooting, Wi-Fi setup, hardware upgrades, 
-          and professional website design.
-        </p>
-
+        <p class="lead">Troubleshooting, Wi-Fi setup, hardware upgrades, and professional website design.</p>
         <div class="hero-btns">
           <a href="#contact" class="btn btn-primary">Get Free Consultation</a>
           <a href="#services" class="btn btn-outline">View Services</a>
@@ -91,13 +76,16 @@
     <section class="trust-bar">
       <div class="container trust-grid">
         <div class="trust-item">
-          <span class="icon">⏰</span> 24/7 Availability
+          <svg class="icon-svg white" viewBox="0 0 24 24"><path fill="currentColor" d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
+          24/7 Availability
         </div>
         <div class="trust-item">
-          <span class="icon">📍</span> Soweto Based
+          <svg class="icon-svg white" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          Soweto Based
         </div>
         <div class="trust-item">
-          <span class="icon">🛡️</span> 99.9% Uptime
+          <svg class="icon-svg white" viewBox="0 0 24 24"><path fill="currentColor" d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          Fast Response
         </div>
       </div>
     </section>
@@ -106,69 +94,155 @@
       <div class="container">
         <div class="section-header">
           <h2>Comprehensive IT Services</h2>
-          <p>Everything you need to keep your tech running smoothly.</p>
+          <p>Clear, affordable help — explained in simple terms.</p>
         </div>
-
-        <div class="services-grid">
+        <div class="grid-3">
           <div class="card">
-            <div class="card-icon">💻</div>
+            <div class="card-icon">
+              <svg class="icon-svg blue" viewBox="0 0 24 24"><path fill="currentColor" d="M20 18c1.1 0 1.99-.9 1.99-2L22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/></svg>
+            </div>
             <h3>IT Support & Repairs</h3>
             <p>We fix slow PCs, software errors, blue screens, and handle updates to keep you working.</p>
           </div>
-          
           <div class="card">
-            <div class="card-icon">📶</div>
+            <div class="card-icon">
+              <svg class="icon-svg blue" viewBox="0 0 24 24"><path fill="currentColor" d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3a4.237 4.237 0 0 0-6 0zm-4-4l2 2a7.074 7.074 0 0 1 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+            </div>
             <h3>Wi-Fi & Networks</h3>
             <p>Router setup, range extension, cabling, and fixing "dead zones" in your home or office.</p>
           </div>
-
           <div class="card">
-            <div class="card-icon">🖥️</div>
-            <h3>Hardware Setup</h3>
-            <p>New computer setup, printer installation, RAM/SSD upgrades, and virus removal.</p>
-          </div>
-
-          <div class="card">
-            <div class="card-icon">🌐</div>
-            <h3>Website Design</h3>
+            <div class="card-icon">
+              <svg class="icon-svg blue" viewBox="0 0 24 24"><path fill="currentColor" d="M3 3h18v18H3zM21 1h-8v2h8v18h-8v2h8a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2zM9 5h6v2H9zm0 4h6v2H9zm0 4h6v2H9z"/></svg>
+            </div>
+            <h3>Web Design</h3>
             <p>Modern, responsive websites built to look great on mobile and convert visitors into clients.</p>
           </div>
-          
-           <div class="card">
-            <div class="card-icon">🔧</div>
-            <h3>Maintenance</h3>
-            <p>Regular checkups and cleaning to prevent crashes and data loss before they happen.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us" class="section section-dark">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="text-white">Why Choose Us?</h2>
+          <p class="text-grey">Simple process. Clean work. Honest communication.</p>
+        </div>
+        <div class="grid-2">
+          <div class="feature-item">
+            <h4>🚀 Fast Response</h4>
+            <p>We prioritize urgent issues and keep you updated while we work.</p>
+          </div>
+          <div class="feature-item">
+            <h4>📱 Mobile-First</h4>
+            <p>We design websites that look perfect on phones, where your clients are.</p>
+          </div>
+          <div class="feature-item">
+            <h4>💰 Affordable & Clear</h4>
+            <p>No tech jargon. We explain the fix and the cost before we start.</p>
+          </div>
+          <div class="feature-item">
+            <h4>🚗 On-Site or Remote</h4>
+            <p>We come to you in Soweto or fix software issues remotely.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>How We Work</h2>
+          <p>A simple 3-step process to get you sorted.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h3>Message / Call</h3>
+            <p>Tell us what’s happening (WhatsApp is fastest).</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h3>Quick Assessment</h3>
+            <p>We diagnose the issue and give you a clear price estimate.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h3>Fix / Build</h3>
+            <p>We resolve the problem or launch your new website.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="examples" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <h2>Example Websites</h2>
+          <p>Request a live demo link to see these in action.</p>
+        </div>
+        <div class="grid-3">
+          <div class="card demo-card">
+            <h3>Small Business</h3>
+            <p>Service-based layout (Salons, Cleaning, Mechanics).</p>
+            <a href="https://wa.me/27814737476?text=Send%20Demo%201" class="btn btn-sm">Request Demo Link</a>
+          </div>
+          <div class="card demo-card">
+            <h3>Portfolio</h3>
+            <p>Personal brand style (Photographers, DJs, Artists).</p>
+            <a href="https://wa.me/27814737476?text=Send%20Demo%202" class="btn btn-sm">Request Demo Link</a>
+          </div>
+          <div class="card demo-card">
+            <h3>Corporate</h3>
+            <p>Professional info site (Consulting, Logistics, Legal).</p>
+            <a href="https://wa.me/27814737476?text=Send%20Demo%203" class="btn btn-sm">Request Demo Link</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="contact-box">
+          <div class="contact-text">
+            <h2>Need help today?</h2>
+            <p class="sub-head">WhatsApp is the fastest way to reach us.</p>
+            
+            <div class="info-list">
+              <div class="info-row">
+                <svg class="icon-svg blue" viewBox="0 0 24 24"><path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>info@nemadzivhananiit.co.za</span>
+              </div>
+              <div class="info-row">
+                <svg class="icon-svg blue" viewBox="0 0 24 24"><path fill="currentColor" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 1.25 0 2.45.2 3.57.57.35.13.75.05 1.02-.24l2.2-2.2z"/></svg>
+                <span>081 473 7476</span>
+              </div>
+              <div class="info-row">
+                <svg class="icon-svg blue" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+                <span>Soweto, Gauteng</span>
+              </div>
+            </div>
           </div>
 
-           <div class="card">
-            <div class="card-icon">📞</div>
-            <h3>Remote Support</h3>
-            <p>Quick fixes over the phone or internet for urgent software issues without a callout fee.</p>
+          <div class="contact-action">
+            <p>Tell us your issue and we’ll recommend the best solution.</p>
+            <a href="https://wa.me/27814737476" class="btn btn-primary full-width">Chat on WhatsApp</a>
           </div>
         </div>
       </div>
     </section>
 
     <footer class="footer">
-      <div class="container">
-        <div class="footer-content">
-          <div class="brand-text white-text">
-            <span class="company-name">NEMADZIVHANANI</span>
-            <span class="company-sub">IT SOLUTIONS</span>
-          </div>
-          <div class="footer-links">
-            <a href="#services">Services</a>
-            <a href="#contact">Contact</a>
-            <a href="https://wa.me/27814737476">WhatsApp</a>
-          </div>
+      <div class="container footer-content">
+        <div class="brand-text white-text">
+          <span class="company-name">NEMADZIVHANANI</span>
+          <span class="company-sub">IT SOLUTIONS</span>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; <span id="year">2026</span> Nemadzivhanani IT Solutions. All rights reserved.</p>
-        </div>
+        <p>&copy; <span id="year">2026</span> All rights reserved.</p>
       </div>
     </footer>
-  </main>
 
+  </main>
   <script src="js/main.js"></script>
 </body>
 </html>
