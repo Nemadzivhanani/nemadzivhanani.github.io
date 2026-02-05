@@ -218,7 +218,15 @@ img { max-width: 100%; display: block; }
   .burger-btn { display: flex; }
 
   /* Hero Mobile Fixes */
-  .hero { text-align: left; padding-top: 100px; padding-bottom: 50px; min-height: auto; height: auto; }
+  .hero { 
+  text-align: left; 
+  padding-top: 80px; 
+  padding-bottom: 40px; 
+  min-height: 85vh; /* 85% of screen height = Fills the screen */
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+}
   .hero h1 { font-size: 26px; margin-bottom: 15px; max-width: 90%; } 
   .lead { font-size: 16px; margin-bottom: 25px; } 
   
