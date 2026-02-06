@@ -1,13 +1,11 @@
-/* =========================
-   EXISTING STYLES (Keep Variables, Nav, Hero, Grid from before)
-========================= */
+/* Keep your existing Variables & Reset */
 :root { --black: #000000; --white: #ffffff; --grey: #f5f5f5; --font-main: 'Inter', sans-serif; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: var(--font-main); padding-top: 60px; color: var(--black); }
 a { text-decoration: none; color: inherit; }
 .container { width: 90%; max-width: 1000px; margin: auto; }
 
-/* NAV & CART ICON */
+/* Navbar & Cart (Same as before) */
 .navbar { position: fixed; top: 0; inset-inline: 0; background: var(--black); color: var(--white); height: 60px; z-index: 100; display: flex; align-items: center; }
 .nav-flex { display: flex; justify-content: space-between; align-items: center; width: 90%; margin: auto; }
 .menu-icon { width: 24px; display: flex; flex-direction: column; gap: 5px; } .bar { width: 100%; height: 2px; background: white; }
@@ -15,26 +13,49 @@ a { text-decoration: none; color: inherit; }
 .cart-icon { position: relative; cursor: pointer; }
 .cart-count { position: absolute; top: -5px; right: -8px; background: white; color: black; font-size: 10px; font-weight: bold; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
-/* HERO & FILTERS */
+/* HERO */
 .hero { height: 70vh; position: relative; }
 .hero-img { width: 100%; height: 100%; object-fit: cover; }
 .hero-content { position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; text-align: center; }
 .hero-text-box h1 { font-size: 48px; color: white; margin-bottom: 20px; font-weight: 900; line-height: 1; }
-.btn-white { border: 2px solid white; color: white; padding: 12px 25px; font-weight: bold; text-transform: uppercase; }
-.filters { padding: 20px 0; background: white; position: sticky; top: 60px; z-index: 90; border-bottom: 1px solid #eee; }
-.scroll-flex { display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; }
-.filter-btn { background: var(--grey); border: none; padding: 8px 16px; border-radius: 20px; font-weight: 600; cursor: pointer; }
-.filter-btn.active { background: var(--black); color: white; }
+.btn-white { border: 2px solid white; color: white; padding: 12px 25px; font-weight: bold; text-transform: uppercase; background: transparent; cursor: pointer; }
 
-/* GRID & CART SIDEBAR */
-.shop-section { padding: 40px 0; }
+/* === NEW: CATEGORIES SECTION === */
+.categories-section { padding: 40px 0; }
+.section-title { font-size: 24px; text-transform: uppercase; margin-bottom: 30px; font-weight: 900; letter-spacing: 1px; text-align: center; }
+.category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.cat-card { 
+  position: relative; height: 300px; cursor: pointer; overflow: hidden; 
+}
+.cat-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.cat-card:hover img { transform: scale(1.1); }
+
+.cat-overlay {
+  position: absolute; inset: 0; background: rgba(0,0,0,0.2);
+  display: flex; align-items: center; justify-content: center;
+}
+.cat-overlay h3 { 
+  color: white; font-size: 24px; font-weight: 900; letter-spacing: 2px; border: 2px solid white; padding: 10px 20px; 
+}
+
+/* === NEW: MODEL BANNER === */
+.model-banner { width: 100%; height: 400px; margin: 40px 0; }
+.model-banner img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+
+/* PRODUCT GRID */
+.shop-section { padding: 40px 0 80px; }
 .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
 .p-img-box { background: var(--grey); height: 200px; margin-bottom: 10px; }
 .p-img { width: 100%; height: 100%; object-fit: cover; }
 .price-row { display: flex; justify-content: space-between; align-items: center; font-weight: bold; }
 .add-btn { background: var(--black); color: white; width: 30px; height: 30px; border-radius: 50%; border: none; cursor: pointer; }
 
-/* CART OVERLAY */
+/* UTILS */
+.back-btn { background: none; border: none; font-size: 14px; font-weight: bold; cursor: pointer; margin-bottom: 20px; }
+.large { font-size: 32px; text-align: left; }
+
+/* CART & MODAL STYLES (Keep from previous) */
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 101; display: none; }
 .overlay.open { display: block; }
 .cart-sidebar { position: fixed; top: 0; right: -100%; width: 85%; max-width: 400px; height: 100%; background: white; z-index: 102; transition: 0.3s; display: flex; flex-direction: column; }
@@ -44,51 +65,15 @@ a { text-decoration: none; color: inherit; }
 .cart-item { display: flex; gap: 10px; margin-bottom: 15px; }
 .cart-img { width: 50px; height: 50px; object-fit: cover; }
 .btn-black { background: black; color: white; width: 100%; padding: 15px; border: none; font-weight: bold; cursor: pointer; }
-
-/* =========================
-   CHECKOUT MODAL (NEW)
-========================= */
-.checkout-modal {
-  position: fixed; inset: 0; z-index: 200;
-  display: flex; align-items: center; justify-content: center;
-  pointer-events: none; opacity: 0; transition: 0.3s;
-}
+.checkout-modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; pointer-events: none; opacity: 0; transition: 0.3s; }
 .checkout-modal.active { pointer-events: all; opacity: 1; }
-
-.checkout-content {
-  background: white; width: 95%; max-width: 450px; 
-  padding: 30px; border-radius: 8px; 
-  box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-  position: relative;
-  transform: translateY(20px); transition: 0.3s;
-}
+.checkout-content { background: white; width: 95%; max-width: 450px; padding: 30px; border-radius: 8px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); transform: translateY(20px); transition: 0.3s; }
 .checkout-modal.active .checkout-content { transform: translateY(0); }
-
 .close-checkout { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 24px; cursor: pointer; }
-
-.input-group { margin-bottom: 20px; }
-.input-group label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; }
-.chk-input { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 10px; font-family: inherit; }
-.chk-input:focus { border-color: black; outline: none; }
-
-.row { display: flex; gap: 10px; justify-content: space-between; }
-.half { width: 50%; }
-
-.card-box { background: #f9f9f9; padding: 15px; border: 1px solid #eee; border-radius: 4px; }
-.secure-note { font-size: 11px; color: #00aa00; margin-top: 5px; display: flex; align-items: center; gap: 5px; }
-
-.checkout-totals { margin: 20px 0; border-top: 1px solid #eee; padding-top: 15px; }
-.checkout-totals .row { margin-bottom: 5px; font-size: 14px; color: #666; }
-.checkout-totals .total { color: black; font-weight: 900; font-size: 18px; margin-top: 10px; }
-
-/* SUCCESS ANIMATION */
-.success-icon { 
-  width: 60px; height: 60px; background: #00aa00; color: white; 
-  border-radius: 50%; margin: 0 auto 20px; 
-  display: flex; align-items: center; justify-content: center; 
-}
+.input-group { margin-bottom: 20px; } .chk-input { width: 100%; padding: 12px; border: 1px solid #ddd; margin-bottom: 10px; }
+.row { display: flex; gap: 10px; justify-content: space-between; } .half { width: 50%; }
+.success-icon { width: 60px; height: 60px; background: #00aa00; color: white; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; }
 .success-icon svg { width: 30px; fill: white; }
-.sub-text { color: #666; font-size: 14px; }
 .btn-outline { background: transparent; border: 1px solid #ddd; padding: 12px; width: 100%; cursor: pointer; font-weight: bold; }
 
 @media (min-width: 768px) {
