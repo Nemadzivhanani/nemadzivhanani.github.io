@@ -22,6 +22,14 @@
     </div>
   </nav>
 
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <span>MADE IN SOWETO</span> • <span>WORLDWIDE SHIPPING</span> • <span>LIMITED DROPS</span> • <span>HAVE NO DOUBTS</span> • 
+      <span>MADE IN SOWETO</span> • <span>WORLDWIDE SHIPPING</span> • <span>LIMITED DROPS</span> • <span>HAVE NO DOUBTS</span> •
+      <span>MADE IN SOWETO</span> • <span>WORLDWIDE SHIPPING</span> • <span>LIMITED DROPS</span> • <span>HAVE NO DOUBTS</span> •
+    </div>
+  </div>
+
   <div id="view-home">
     
     <header class="hero">
@@ -29,7 +37,7 @@
       <div class="hero-content">
         <div class="hero-text-box">
           <h1>HAVE NO<br>DOUBTS.</h1>
-          <button onclick="scrollToCategories()" class="btn-white">Explore</button>
+          <button onclick="scrollToCategories()" class="btn-white">Explore Collection</button>
         </div>
       </div>
     </header>
@@ -38,21 +46,14 @@
       <div class="container">
         <h2 class="section-title">Shop By Category</h2>
         <div class="category-grid">
-          
           <div class="cat-card" onclick="openCategory('t-shirt')">
             <img src="assets/cat-shirt.jpg" alt="T-Shirts">
-            <div class="cat-overlay">
-              <h3>T-SHIRTS</h3>
-            </div>
+            <div class="cat-overlay"><h3>T-SHIRTS</h3></div>
           </div>
-
           <div class="cat-card" onclick="openCategory('hoodie')">
             <img src="assets/cat-hoodie.jpg" alt="Hoodies">
-            <div class="cat-overlay">
-              <h3>HOODIES</h3>
-            </div>
+            <div class="cat-overlay"><h3>HOODIES</h3></div>
           </div>
-
         </div>
       </div>
     </section>
@@ -68,14 +69,24 @@
           </div>
       </div>
     </section>
+
+    <section class="vip-section">
+      <div class="container">
+        <h2>JOIN THE MOVEMENT</h2>
+        <p>Get early access to drops and exclusive discounts.</p>
+        <div class="vip-form">
+          <input type="email" placeholder="Enter your email">
+          <button>SUBSCRIBE</button>
+        </div>
+      </div>
+    </section>
   </div>
 
   <div id="view-category" style="display: none;">
     <div class="container" style="padding-top: 40px;">
       <button onclick="goHome()" class="back-btn">← Back to Home</button>
       <h2 id="cat-title" class="section-title large">Category Name</h2>
-      <div class="product-grid" id="category-grid">
-        </div>
+      <div class="product-grid" id="category-grid"></div>
     </div>
   </div>
 
@@ -87,16 +98,11 @@
         <div class="detail-img-box">
           <img id="detail-img" src="" alt="Product">
         </div>
-        
         <div class="detail-info">
           <h2 id="detail-title" class="product-title-large">Product Name</h2>
           <p id="detail-price" class="product-price-large">R 0.00</p>
+          <p class="desc-text">Official JANE 4 Streetwear. High-quality cotton blend designed for the modern urban environment. Limited drop release.</p>
           
-          <p class="desc-text">
-            Official JANE 4 Streetwear. High-quality cotton blend designed for the modern urban environment.
-            Limited drop release.
-          </p>
-
           <div class="size-selector">
             <label>Select Size</label>
             <div class="size-btns">
@@ -106,7 +112,6 @@
               <button class="size-btn">XL</button>
             </div>
           </div>
-
           <button id="detail-add-btn" class="btn-black block big-btn">Add to Bag</button>
         </div>
       </div>

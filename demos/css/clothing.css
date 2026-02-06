@@ -3,9 +3,9 @@
 ========================= */
 :root { --black: #000000; --white: #ffffff; --grey: #f5f5f5; --font-main: 'Inter', sans-serif; }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: var(--font-main); padding-top: 60px; color: var(--black); }
+body { font-family: var(--font-main); padding-top: 60px; color: var(--black); overflow-x: hidden; }
 a { text-decoration: none; color: inherit; }
-.container { width: 90%; max-width: 1200px; margin: auto; } /* Increased width for PC */
+.container { width: 90%; max-width: 1200px; margin: auto; }
 
 /* NAVBAR */
 .navbar { position: fixed; top: 0; inset-inline: 0; background: var(--black); color: var(--white); height: 60px; z-index: 100; display: flex; align-items: center; }
@@ -15,8 +15,14 @@ a { text-decoration: none; color: inherit; }
 .cart-icon { position: relative; cursor: pointer; }
 .cart-count { position: absolute; top: -5px; right: -8px; background: white; color: black; font-size: 10px; font-weight: bold; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
 
-/* HERO (Mobile Default) */
-.hero { height: 60vh; position: relative; background: #000; } 
+/* HYPE BAR (MARQUEE) */
+.marquee-container { background: var(--black); color: var(--white); padding: 10px 0; overflow: hidden; white-space: nowrap; position: relative; z-index: 95; border-bottom: 1px solid #333; }
+.marquee-track { display: inline-block; animation: scroll 15s linear infinite; font-weight: 900; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+.marquee-track span { color: #888; margin: 0 10px; }
+@keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* HERO (Mobile) */
+.hero { height: 60vh; position: relative; background: #000; }
 .hero-img { width: 100%; height: 100%; object-fit: cover; opacity: 0.8; }
 .hero-content { position: absolute; inset: 0; background: rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center; text-align: center; }
 .hero-text-box h1 { font-size: 42px; color: white; margin-bottom: 20px; font-weight: 900; line-height: 1; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
@@ -27,35 +33,26 @@ a { text-decoration: none; color: inherit; }
 .categories-section { padding: 30px 0; }
 .section-title { font-size: 20px; text-transform: uppercase; margin-bottom: 20px; font-weight: 900; letter-spacing: 1px; text-align: center; }
 .category-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-
-.cat-card { 
-  position: relative; 
-  height: 200px; 
-  cursor: pointer; 
-  overflow: hidden; 
-  border-radius: 4px;
-}
+.cat-card { position: relative; height: 200px; cursor: pointer; overflow: hidden; border-radius: 4px; }
 .cat-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 .cat-card:hover img { transform: scale(1.05); }
-
 .cat-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0.3); display: flex; align-items: center; justify-content: center; }
-.cat-overlay h3 { 
-  color: white; 
-  font-size: 14px; 
-  font-weight: 800; 
-  letter-spacing: 1px; 
-  border: 2px solid white; 
-  padding: 8px 12px;
-  background: rgba(0,0,0,0.4);
-  white-space: nowrap;
-}
+.cat-overlay h3 { color: white; font-size: 14px; font-weight: 800; letter-spacing: 1px; border: 2px solid white; padding: 8px 12px; background: rgba(0,0,0,0.4); white-space: nowrap; }
 
 /* MODEL BANNER */
 .model-banner { width: 100%; height: 300px; margin: 30px 0; background: #000; display: flex; justify-content: center; }
-.model-banner img { width: 100%; height: 100%; object-fit: cover; } 
+.model-banner img { width: 100%; height: 100%; object-fit: cover; }
+
+/* VIP SECTION */
+.vip-section { background: var(--black); color: var(--white); padding: 60px 0; text-align: center; margin-top: 40px; }
+.vip-section h2 { font-size: 28px; font-weight: 900; margin-bottom: 10px; }
+.vip-section p { color: #888; margin-bottom: 20px; font-size: 14px; }
+.vip-form { display: flex; max-width: 400px; margin: auto; gap: 5px; padding: 0 20px; }
+.vip-form input { flex: 1; padding: 15px; border: none; background: #222; color: white; font-weight: bold; outline: none; }
+.vip-form button { padding: 15px; background: white; color: black; border: none; font-weight: 900; cursor: pointer; text-transform: uppercase; font-size: 12px; }
 
 /* GRID */
-.shop-section { padding: 20px 0 80px; }
+.shop-section { padding: 20px 0 60px; }
 .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; }
 .p-img-box { background: var(--grey); height: 180px; margin-bottom: 10px; cursor: pointer; border-radius: 4px; overflow: hidden; }
 .p-img { width: 100%; height: 100%; object-fit: cover; transition: 0.3s; }
@@ -63,7 +60,6 @@ a { text-decoration: none; color: inherit; }
 .p-details h3 { font-size: 13px; margin-bottom: 5px; font-weight: 700; cursor: pointer; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .price-row { display: flex; justify-content: space-between; align-items: center; font-weight: bold; font-size: 14px; }
 .add-btn { background: var(--black); color: white; width: 28px; height: 28px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding-bottom: 2px; transition: 0.2s; }
-.add-btn:hover { transform: scale(1.1); }
 
 /* SINGLE PRODUCT PAGE */
 .product-detail-grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 20px; }
@@ -81,6 +77,7 @@ a { text-decoration: none; color: inherit; }
 
 /* UTILS */
 .back-btn { background: none; border: none; font-size: 14px; font-weight: bold; cursor: pointer; margin-bottom: 20px; }
+.large { font-size: 32px; text-align: left; }
 
 /* CART & CHECKOUT */
 .overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 101; display: none; }
@@ -103,22 +100,23 @@ a { text-decoration: none; color: inherit; }
 .success-icon { width: 60px; height: 60px; background: #00aa00; color: white; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; }
 .success-icon svg { width: 30px; fill: white; }
 .btn-outline { background: transparent; border: 1px solid #ddd; padding: 12px; width: 100%; cursor: pointer; font-weight: bold; }
+footer { text-align: center; padding: 20px; background: var(--black); color: #666; font-size: 12px; }
 
 /* =========================
    PC / DESKTOP UPGRADES (The Fix)
 ========================= */
 @media (min-width: 768px) {
-  /* 1. HERO FIX: Limit height so it doesn't take whole screen */
+  /* 1. HERO FIX */
   .hero { height: 500px; }
   .hero-text-box h1 { font-size: 64px; }
 
-  /* 2. BANNER FIX: Stop the zoom! Use 'contain' to show full image */
+  /* 2. BANNER FIX: Use 'contain' to show full image on PC */
   .model-banner { height: 400px; background-color: #f5f5f5; }
-  .model-banner img { object-fit: contain; } /* <--- THIS FIXES THE ZOOM */
+  .model-banner img { object-fit: contain; } 
 
-  /* 3. GRID FIX: 4 items per row, not 2 */
+  /* 3. GRID FIX: 4 items per row */
   .product-grid { grid-template-columns: repeat(4, 1fr); gap: 30px; }
-  .p-img-box { height: 280px; } /* Taller boxes for PC */
+  .p-img-box { height: 280px; } 
   .p-details h3 { font-size: 16px; }
 
   /* 4. CATEGORIES: Controlled height */
@@ -129,4 +127,7 @@ a { text-decoration: none; color: inherit; }
   .product-detail-grid { grid-template-columns: 1fr 1fr; gap: 50px; }
   .detail-img-box { height: 500px; }
   .product-title-large { font-size: 42px; }
+  
+  /* 6. VIP FIX */
+  .vip-section h2 { font-size: 36px; }
 }
