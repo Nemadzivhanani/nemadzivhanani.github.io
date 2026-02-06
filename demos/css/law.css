@@ -27,7 +27,7 @@ a { text-decoration: none; transition: 0.3s; }
 .container { width: 90%; max-width: 1100px; margin: auto; }
 
 /* =========================
-   2. NAVBAR (Fixed for Mobile)
+   2. NAVBAR
 ========================= */
 .navbar {
   background: var(--white);
@@ -38,20 +38,22 @@ a { text-decoration: none; transition: 0.3s; }
 .nav-flex { display: flex; justify-content: space-between; align-items: center; }
 
 /* LOGO & NAME WRAPPER */
-.brand { display: flex; align-items: center; gap: 8px; } /* Tight gap */
+.brand { display: flex; align-items: center; gap: 10px; }
 .logo-img { height: 45px; width: auto; }
 
 .brand-text { display: flex; flex-direction: column; justify-content: center; }
 
-/* Desktop Defaults */
+/* COMPANY NAME (Desktop) */
 .company { 
   font-family: var(--font-serif); 
   font-weight: 700; 
   color: var(--navy); 
   font-size: 16px; 
   line-height: 1.1;
-  white-space: nowrap; /* Forces one line */
+  white-space: nowrap; /* Keeps it on one line */
 }
+
+/* TAGLINE (Desktop) */
 .tagline { 
   font-size: 10px; 
   letter-spacing: 2px; 
@@ -121,7 +123,7 @@ a { text-decoration: none; transition: 0.3s; }
   border-top: 4px solid var(--gold); transition: 0.3s;
 }
 .icon-box { margin-bottom: 20px; color: var(--gold); }
-.icon-gold-lg { width: 45px; height: 45px; } /* SVG Size */
+.icon-gold-lg { width: 45px; height: 45px; }
 
 .area-card h3 { font-family: var(--font-serif); font-size: 24px; color: var(--navy); margin-bottom: 15px; }
 .area-card p { color: var(--text-grey); font-size: 15px; }
@@ -131,7 +133,7 @@ a { text-decoration: none; transition: 0.3s; }
 .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
 .contact-info h2 { font-family: var(--font-serif); font-size: 36px; margin-bottom: 10px; }
 .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; }
-.icon-gold-sm { width: 24px; height: 24px; color: var(--gold); min-width: 24px; } /* SVG Size */
+.icon-gold-sm { width: 24px; height: 24px; color: var(--gold); min-width: 24px; }
 .info-item p, .info-item a { color: white; font-size: 16px; }
 
 /* FORM */
@@ -143,35 +145,31 @@ a { text-decoration: none; transition: 0.3s; }
 footer { background: #111; color: #666; padding: 30px 0; text-align: center; font-size: 12px; }
 
 /* =========================
-   MOBILE RESPONSIVE (Strict Controls)
+   MOBILE RESPONSIVE (CLEAN & SMALL)
 ========================= */
 @media (max-width: 768px) {
-  /* Hide Nav Links */
-  .nav-links { display: none; } 
-  
-  /* 1. Logo & Name Fixes */
-  .logo-img { height: 32px; } 
+  /* 1. Remove Button on Mobile */
+  .btn-gold-nav { display: none; }
+  .nav-links { display: none; }
+
+  /* 2. Fix Logo & Name */
+  .logo-img { height: 35px; } 
 
   .company { 
-    font-size: 11px; /* Small enough for 1 line */
+    font-size: 12px; /* Smaller font for Name */
     letter-spacing: 0;
+    white-space: nowrap; /* Forces one line */
   }
+  
   .tagline { 
-    font-size: 8px; 
-    margin-top: 0;
-  }
-
-  /* 2. Compact Button Fix */
-  .btn-gold-nav { 
-    padding: 6px 10px; /* Tight padding */
-    font-size: 10px;   /* Small text */
-    letter-spacing: 0.5px;
+    font-size: 9px; 
+    margin-top: 2px;
   }
 
   /* 3. Hero Adjustments */
   .hero h1 { font-size: 32px; }
   
-  /* Buttons: Side-by-Side on Mobile */
+  /* Buttons: Side-by-Side */
   .btn-group { 
     flex-direction: row; 
     width: 100%; 
@@ -185,7 +183,7 @@ footer { background: #111; color: #666; padding: 30px 0; text-align: center; fon
     display: flex; align-items: center; justify-content: center;
   }
 
-  /* 4. Grid Adjustments */
+  /* 4. Layout Stacking */
   .grid-3 { grid-template-columns: 1fr; }
   .intro-grid { grid-template-columns: 1fr; }
   .contact-wrapper { grid-template-columns: 1fr; }
