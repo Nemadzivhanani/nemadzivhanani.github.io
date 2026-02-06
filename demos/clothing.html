@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JANE 4 | Streetwear</title>
-  <link rel="stylesheet" href="css/clothing.css" />
+  <link rel="stylesheet" href="css/clothing.css?v=2" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -12,9 +12,11 @@
   <nav class="navbar">
     <div class="container nav-flex">
       <div class="menu-icon"><div class="bar"></div><div class="bar"></div><div class="bar"></div></div>
+      
       <div class="brand" onclick="goHome()" style="cursor: pointer;">
         <img src="assets/jane-logo.png" alt="JANE 4" class="logo-img">
       </div>
+      
       <div class="cart-icon" onclick="toggleCart()">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
         <span id="cart-count" class="cart-count">0</span>
@@ -84,7 +86,10 @@
 
   <div id="view-category" style="display: none;">
     <div class="container" style="padding-top: 40px;">
-      <button onclick="goHome()" class="back-btn">← Back to Home</button>
+      <button onclick="goHome()" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 5px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Home
+      </button>
       <h2 id="cat-title" class="section-title large">Category Name</h2>
       <div class="product-grid" id="category-grid"></div>
     </div>
@@ -92,19 +97,34 @@
 
   <div id="view-product" style="display: none;">
     <div class="container" style="padding-top: 40px;">
-      <button onclick="goHome()" class="back-btn">← Back to Store</button>
+      
+      <button onclick="goHome()" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align: middle; margin-right: 5px;"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to Store
+      </button>
       
       <div class="product-detail-grid">
         <div class="detail-img-box">
           <img id="detail-img" src="" alt="Product">
         </div>
+        
         <div class="detail-info">
+          <span class="status-badge">LIMITED DROP</span>
+          
           <h2 id="detail-title" class="product-title-large">Product Name</h2>
           <p id="detail-price" class="product-price-large">R 0.00</p>
-          <p class="desc-text">Official JANE 4 Streetwear. High-quality cotton blend designed for the modern urban environment. Limited drop release.</p>
+          
+          <p class="desc-text">
+            Official JANE 4 Streetwear. Heavyweight cotton blend designed for durability and comfort in the urban environment. 
+            <br><br>
+            <strong>Fit:</strong> True to size (Boxy Fit).
+          </p>
           
           <div class="size-selector">
-            <label>Select Size</label>
+            <div class="size-header">
+              <label>Select Size</label>
+              <span class="size-guide">Size Guide</span>
+            </div>
             <div class="size-btns">
               <button class="size-btn">S</button>
               <button class="size-btn active">M</button>
@@ -112,8 +132,29 @@
               <button class="size-btn">XL</button>
             </div>
           </div>
+
           <button id="detail-add-btn" class="btn-black block big-btn">Add to Bag</button>
-        </div>
+
+          <div class="trust-row">
+            <div class="trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                <path d="M9 12l2 2 4-4"></path>
+              </svg>
+              <span>Authentic Quality</span>
+            </div>
+
+            <div class="trust-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="1" y="3" width="15" height="13"></rect>
+                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              <span>Ships in 2-3 Days</span>
+            </div>
+          </div>
+          </div>
       </div>
     </div>
   </div>
@@ -137,12 +178,18 @@
       
       <div id="checkout-step-1">
         <h2>Secure Checkout</h2>
+        
         <div class="input-group">
           <label>Delivery Address</label>
           <input type="text" placeholder="Street Address" class="chk-input">
+          <div class="row">
+            <input type="text" placeholder="City" class="chk-input half">
+            <input type="text" placeholder="Code" class="chk-input half">
+          </div>
         </div>
+
         <div class="input-group">
-          <label>Payment Details</label>
+          <label>Payment Details (Encrypted)</label>
           <div class="card-box">
             <input type="text" placeholder="0000 0000 0000 0000" class="chk-input card-num">
             <div class="row">
@@ -151,14 +198,18 @@
             </div>
           </div>
         </div>
+
         <div class="checkout-totals">
           <div class="row total"><span>Total to Pay</span><span id="chk-total">R 0.00</span></div>
         </div>
+
         <button onclick="processPayment()" class="btn-black block" id="pay-btn">Pay Now</button>
       </div>
 
       <div id="checkout-step-2" style="display: none; text-align: center; padding: 40px 0;">
-        <div class="success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
+        <div class="success-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        </div>
         <h2>Order Confirmed!</h2>
         <button onclick="closeCheckout()" class="btn-outline block" style="margin-top: 20px;">Continue Shopping</button>
       </div>
@@ -166,7 +217,12 @@
     </div>
   </div>
 
-  <footer><div class="container"><p>&copy; 2026 JANE 4.</p></div></footer>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 JANE 4.</p>
+    </div>
+  </footer>
+
   <script src="js/clothing.js"></script>
 </body>
 </html>
