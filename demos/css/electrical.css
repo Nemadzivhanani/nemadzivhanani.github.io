@@ -2,15 +2,15 @@
    1. VARIABLES & RESET
 ========================= */
 :root {
-  --orange: #ff5100;    /* High-Vis Safety Orange */
+  --orange: #ff5100;    /* Safety Orange */
   --orange-glow: #ff7b3b;
   --black: #0a0a0a;     /* Deep Black */
-  --grey-dark: #1f1f1f;
-  --grey-light: #f5f5f5;
+  --navy: #0f172a;      /* Deep Navy (Like Inspo Background) */
+  --grey-light: #f8f9fa; /* Clean White/Grey for Services */
   --text-main: #ffffff;
-  --text-muted: #a3a3a3;
+  --text-dark: #333333; /* Text color for light sections */
   
-  --radius: 4px;        /* Sharper corners for industrial look */
+  --radius: 6px;
   --font-main: 'Segoe UI', system-ui, sans-serif;
 }
 
@@ -31,27 +31,18 @@ a { text-decoration: none; transition: 0.3s; }
 ========================= */
 .header {
   position: absolute; top: 0; left: 0; right: 0;
-  padding: 20px 0;
+  padding: 15px 0;
   z-index: 100;
   background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
 }
 
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 
-.brand { display: flex; align-items: center; gap: 12px; }
-
-/* The Logo Mark */
-.logo-mark {
-  width: 40px; height: 40px;
-  background: var(--orange);
-  color: white;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 24px;
-  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0% 100%); /* Angled industrial shape */
-}
+.brand { display: flex; align-items: center; gap: 15px; }
+.logo-img { height: 50px; width: auto; } /* Control Logo Size */
 
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
-.brand-text .name { font-weight: 800; font-size: 20px; letter-spacing: 1px; }
+.brand-text .name { font-weight: 800; font-size: 20px; letter-spacing: 1px; color: white; }
 .brand-text .sub { font-size: 11px; color: var(--orange); font-weight: 600; letter-spacing: 2px; }
 
 .nav-contact { display: flex; align-items: center; }
@@ -66,27 +57,19 @@ a { text-decoration: none; transition: 0.3s; }
 ========================= */
 .hero {
   position: relative;
-  height: 90vh; /* Full Impact */
-  display: flex; align-items: center; justify-content: center; /* Added justify-content: center */
-  border-bottom: 4px solid var(--orange);
-  text-align: center; /* Force text centering */
+  height: 85vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
 }
 
 .hero-bg { position: absolute; inset: 0; z-index: -1; }
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-
-/* NEW ELEGANT OVERLAY (Radial "Spotlight" effect) */
 .overlay { 
   position: absolute; inset: 0; 
-  background: radial-gradient(circle at center, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.95) 80%);
+  background: radial-gradient(circle at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
 }
 
-/* CENTERED CONTENT */
-.hero-content { 
-  position: relative; 
-  max-width: 800px; /* Wider to allow centered text to breathe */
-  margin: auto; 
-}
+.hero-content { position: relative; max-width: 800px; margin: auto; }
 
 .badge {
   background: rgba(255, 81, 0, 0.2);
@@ -97,140 +80,136 @@ a { text-decoration: none; transition: 0.3s; }
   font-size: 12px;
   font-weight: 700;
   text-transform: uppercase;
-  margin-bottom: 25px; /* More space */
+  margin-bottom: 25px;
 }
 
 .hero h1 { 
-  font-size: 56px; 
-  line-height: 1.1; 
-  font-weight: 900; /* Extra bold */
-  margin-bottom: 25px; 
-  text-transform: uppercase; 
-  letter-spacing: 2px; /* ELEGANT SPACING */
+  font-size: 52px; line-height: 1.1; font-weight: 900; 
+  margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; 
 }
 
 .hero p { 
-  font-size: 20px; /* Slightly bigger */
-  color: #d4d4d4; 
-  margin-bottom: 40px; 
-  max-width: 700px; /* Controls width for nice 2-3 lines */
-  margin-inline: auto; /* Ensures centered paragraph */
-  line-height: 1.7;
+  font-size: 18px; color: #e5e5e5; margin-bottom: 40px; 
+  max-width: 700px; margin-inline: auto; 
 }
 
-/* CENTERED BUTTONS */
-.btn-group { 
-  display: flex; 
-  gap: 20px; 
-  justify-content: center; /* Centers the buttons horizontally */
-}
-
-.btn { 
-  padding: 15px 40px; /* Wider buttons */
-  font-weight: 700; 
-  text-transform: uppercase; 
-  letter-spacing: 1px; 
-  font-size: 14px; 
-  border-radius: 2px;
-}
-/* ... rest of button styles remain the same ... */
+.btn-group { display: flex; gap: 20px; justify-content: center; }
+.btn { padding: 15px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; border-radius: 4px; }
+.btn-primary { background: var(--orange); color: white; border: 2px solid var(--orange); }
+.btn-primary:hover { background: var(--orange-glow); border-color: var(--orange-glow); }
+.btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); }
+.btn-outline:hover { background: white; color: black; }
 
 /* =========================
-   4. STATS BAR
+   4. WHY CHOOSE US (New Section)
 ========================= */
-.stats-bar { background: #151515; padding: 40px 0; border-bottom: 1px solid #333; }
-.stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
-.stat-item { text-align: center; }
-.stat-num { display: block; font-size: 32px; font-weight: 800; color: white; }
-.stat-label { font-size: 13px; text-transform: uppercase; color: var(--orange); font-weight: 600; letter-spacing: 1px; }
+.why-us {
+  background: var(--navy); /* Dark Blue like Inspo */
+  padding: 80px 0;
+  text-align: center;
+  border-bottom: 4px solid var(--orange);
+}
+.why-content h2 { font-size: 36px; margin-bottom: 10px; }
+.subtitle { color: #a0aec0; margin-bottom: 50px; max-width: 600px; margin-inline: auto; }
+
+.why-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.why-item { max-width: 300px; }
+.why-icon { font-size: 40px; margin-bottom: 15px; }
+.why-item h3 { color: var(--orange); margin-bottom: 10px; font-size: 20px; }
+.why-item p { color: #ccc; font-size: 15px; }
 
 /* =========================
-   5. SERVICES
+   5. SERVICES (Light Clean Look)
 ========================= */
-.section { padding: 100px 0; background: var(--black); }
-.section-header { margin-bottom: 60px; max-width: 600px; }
-.section-header h2 { font-size: 36px; margin-bottom: 10px; }
-.section-header p { color: var(--text-muted); font-size: 18px; }
+.light-bg { background: var(--grey-light); color: var(--text-dark); }
+.section { padding: 100px 0; }
+.section-header { text-align: center; margin-bottom: 60px; }
+.section-header h2 { font-size: 36px; color: var(--black); margin-bottom: 10px; font-weight: 800; }
+.section-header p { color: #666; font-size: 18px; }
 
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 
 .card {
-  background: var(--grey-dark);
-  padding: 40px;
-  border: 1px solid #333;
-  transition: transform 0.3s, border-color 0.3s;
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Soft shadow like Trivolt */
   position: relative;
-  overflow: hidden;
+  border-bottom: 3px solid transparent;
+  transition: 0.3s;
 }
-.card:hover { transform: translateY(-5px); border-color: var(--orange); }
+.card:hover { transform: translateY(-5px); border-bottom-color: var(--orange); }
 
-/* Little orange corner accent */
-.card::before {
-  content: ''; position: absolute; top: 0; left: 0; 
-  width: 0; height: 2px; background: var(--orange); transition: 0.3s;
-}
-.card:hover::before { width: 100%; }
-
-.icon-box { 
-  width: 50px; height: 50px; 
-  background: rgba(255,255,255,0.05); 
+.card-num { 
+  display: block; 
+  font-size: 14px; font-weight: 900; 
+  color: white; background: var(--orange);
+  width: 40px; height: 30px; 
   display: flex; align-items: center; justify-content: center;
-  border-radius: 50%;
-  margin-bottom: 25px;
-  color: var(--orange);
+  border-radius: 4px; margin-bottom: 15px;
 }
-.icon-svg { width: 28px; height: 28px; }
 
-.card h3 { font-size: 20px; margin-bottom: 15px; }
-.card p { color: var(--text-muted); font-size: 15px; line-height: 1.6; }
+.card h3 { font-size: 20px; margin-bottom: 10px; color: var(--black); font-weight: 700; }
+.card p { color: #666; font-size: 15px; line-height: 1.6; }
 
 /* =========================
-   6. CTA STRIP
+   6. GET A QUOTE (Split Layout)
 ========================= */
-.cta-strip { background: var(--orange); color: white; padding: 40px 0; }
-.cta-flex { display: flex; justify-content: space-between; align-items: center; }
-.cta-text h3 { font-size: 24px; margin-bottom: 5px; }
-.cta-text p { opacity: 0.9; }
-.btn-white { background: white; color: var(--orange); padding: 12px 30px; font-weight: 700; border-radius: 2px; }
+.quote-section { background: var(--navy); padding: 80px 0; }
+.quote-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+
+.quote-text h2 { font-size: 36px; margin-bottom: 20px; }
+.quote-text p { color: #a0aec0; margin-bottom: 40px; font-size: 18px; }
+
+.contact-details-box { margin-top: 30px; }
+.detail-row { display: flex; gap: 15px; margin-bottom: 25px; align-items: center; }
+.detail-row span { font-size: 24px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 50%; }
+.detail-row a { color: white; font-weight: bold; font-size: 18px; }
+
+/* FORM STYLES */
+.form-box {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+.form-box h3 { color: var(--black); margin-bottom: 20px; font-size: 24px; text-align: center; }
+
+.form-group { margin-bottom: 15px; }
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 15px;
+}
+.form-group input:focus, .form-group textarea:focus { outline: 2px solid var(--orange); border-color: transparent; }
+
+.btn-submit {
+  width: 100%;
+  background: var(--navy);
+  color: white;
+  padding: 15px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+.btn-submit:hover { background: var(--orange); }
 
 /* =========================
-   7. FOOTER
+   7. FOOTER & MOBILE
 ========================= */
-.footer { background: #050505; padding: 80px 0 40px; }
-.footer-content { 
-  display: grid; grid-template-columns: 1fr 2fr; gap: 50px; 
-  padding-bottom: 60px; border-bottom: 1px solid #222;
-}
+.footer { background: black; padding: 30px 0; text-align: center; border-top: 1px solid #222; }
+.copyright { color: #888; font-size: 14px; }
 
-.text-white { color: white; }
-.text-orange { color: var(--orange); }
-
-.contact-info { 
-  display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; 
-}
-
-.info-group .label { 
-  display: block; font-size: 11px; text-transform: uppercase; 
-  color: #666; margin-bottom: 8px; letter-spacing: 1px;
-}
-.info-group .value { font-size: 18px; color: white; font-weight: 500; }
-.info-group .link:hover { color: var(--orange); }
-
-.copyright { margin-top: 30px; font-size: 14px; color: #444; text-align: right; }
-
-/* =========================
-   8. MOBILE RESPONSIVE
-========================= */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 36px; }
+  .hero h1 { font-size: 32px; }
   .grid-3 { grid-template-columns: 1fr; }
-  .stats-grid { flex-direction: column; gap: 30px; }
-  
-  .cta-flex { flex-direction: column; text-align: center; gap: 20px; }
-  .btn-group { flex-direction: column; width: 100%; }
-  .btn { width: 100%; text-align: center; }
-  
-  .footer-content { grid-template-columns: 1fr; gap: 40px; }
-  .contact-info { grid-template-columns: 1fr; }
-  .copyright { text-align: center; }
+  .quote-container { grid-template-columns: 1fr; }
+  .nav-contact { display: none; } /* Hide phone on very small screens if needed, or keep it */
+  .why-grid { flex-direction: column; align-items: center; }
 }
