@@ -27,11 +27,11 @@ a { text-decoration: none; transition: 0.3s; }
 .container { width: 90%; max-width: 1200px; margin: auto; }
 
 /* =========================
-   2. HEADER & LOGO (PC FIX)
+   2. HEADER & LOGO
 ========================= */
 .header {
   position: absolute; top: 0; left: 0; right: 0;
-  padding: 20px 0; /* Little more space on PC */
+  padding: 20px 0;
   z-index: 100;
   background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
 }
@@ -42,7 +42,7 @@ a { text-decoration: none; transition: 0.3s; }
   align-items: center; 
 }
 
-/* LEFT SIDE: LOGO */
+/* LEFT: LOGO */
 .brand { display: flex; align-items: center; gap: 15px; }
 .logo-img { height: 50px; width: auto; }
 
@@ -50,36 +50,33 @@ a { text-decoration: none; transition: 0.3s; }
 .brand-text .name { font-weight: 800; font-size: 20px; letter-spacing: 1px; color: white; }
 .brand-text .sub { font-size: 11px; color: var(--orange); font-weight: 600; letter-spacing: 2px; }
 
-/* RIGHT SIDE: CONTACT (THE FIX) */
+/* RIGHT: DESKTOP CONTACT (FIXED) */
 .nav-contact { 
   display: flex; 
   align-items: center;
-  flex-shrink: 0; /* Prevents the box from shrinking */
+  /* This forces the box to never shrink or squash */
+  flex-shrink: 0; 
+  margin-left: auto;
 }
 
 .nav-phone { 
   display: flex; 
+  flex-direction: row; /* FORCE row so it can't stack */
   align-items: center; 
-  gap: 10px; 
+  gap: 12px; 
   color: white; 
   font-weight: 700; 
-  font-size: 18px; /* Bigger and easier to read on PC */
-  white-space: nowrap; /* <--- THIS IS THE KEY FIX. It forces text to stay on one line. */
-  transition: 0.3s;
+  font-size: 18px; 
+  /* This forces the text to stay on one line no matter what */
+  white-space: nowrap; 
 }
 
-.nav-phone:hover {
-  color: var(--orange); /* Nice hover effect for PC users */
-}
+.nav-phone:hover { color: var(--orange); }
 
-/* =========================
-   MOBILE HIDE (Keep this exactly as is)
-========================= */
-@media (max-width: 768px) {
-  .nav-contact { 
-    display: none !important; /* Forces it to stay hidden on phone */
-  }
-}
+/* SVG Icon in Header */
+.icon-svg { width: 20px; height: 20px; fill: var(--orange); }
+
+
 /* =========================
    3. HERO SECTION
 ========================= */
@@ -110,6 +107,7 @@ a { text-decoration: none; transition: 0.3s; }
 .btn-outline { background: transparent; color: white; border: 2px solid rgba(255,255,255,0.4); }
 .btn-outline:hover { background: white; color: black; }
 
+
 /* =========================
    4. WHY CHOOSE US
 ========================= */
@@ -120,12 +118,13 @@ a { text-decoration: none; transition: 0.3s; }
 .why-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
 .why-item { max-width: 300px; }
 
-/* NEW SVG ICON STYLES */
-.why-icon-box { margin-bottom: 15px; color: var(--orange); } /* Sets color for SVGs */
-.icon-svg-large { width: 50px; height: 50px; fill: currentColor; } /* 1:1 ratio */
+/* SVG ICONS */
+.why-icon-box { margin-bottom: 15px; color: var(--orange); }
+.icon-svg-large { width: 50px; height: 50px; fill: currentColor; }
 
 .why-item h3 { color: var(--orange); margin-bottom: 10px; font-size: 20px; }
 .why-item p { color: #ccc; font-size: 15px; }
+
 
 /* =========================
    5. SERVICES
@@ -146,14 +145,15 @@ a { text-decoration: none; transition: 0.3s; }
 .card:hover { transform: translateY(-5px); border-bottom-color: var(--orange); }
 
 .card-num { 
-  display: block; font-size: 14px; font-weight: 900; 
+  display: flex; align-items: center; justify-content: center;
+  font-size: 14px; font-weight: 900; 
   color: white; background: var(--orange);
   width: 40px; height: 30px; 
-  display: flex; align-items: center; justify-content: center;
   border-radius: 4px; margin-bottom: 15px;
 }
 .card h3 { font-size: 20px; margin-bottom: 10px; color: var(--black); font-weight: 700; }
 .card p { color: #666; font-size: 15px; line-height: 1.6; }
+
 
 /* =========================
    6. GET A QUOTE
@@ -165,7 +165,6 @@ a { text-decoration: none; transition: 0.3s; }
 
 .detail-row { display: flex; gap: 15px; margin-bottom: 25px; align-items: center; }
 
-/* NEW SVG CIRCLE STYLE */
 .icon-circle { 
   background: rgba(255,255,255,0.1); 
   width: 50px; height: 50px; 
@@ -173,7 +172,7 @@ a { text-decoration: none; transition: 0.3s; }
   display: flex; align-items: center; justify-content: center;
   color: var(--orange);
 }
-.icon-svg-med { width: 24px; height: 24px; fill: currentColor; } /* 1:1 ratio */
+.icon-svg-med { width: 24px; height: 24px; fill: currentColor; }
 
 .detail-row a { color: white; font-weight: bold; font-size: 18px; }
 
@@ -191,28 +190,31 @@ a { text-decoration: none; transition: 0.3s; }
 .footer { background: black; padding: 30px 0; text-align: center; border-top: 1px solid #222; }
 .copyright { color: #888; font-size: 14px; }
 
+
 /* =========================
-   7. MOBILE RESPONSIVE (THE BUTTON FIX)
+   7. MOBILE RESPONSIVE
 ========================= */
 @media (max-width: 768px) {
+  /* HIDE HEADER CONTACT ON MOBILE */
+  .nav-contact { display: none !important; }
+
+  /* Hero & Text Adjustments */
   .hero h1 { font-size: 32px; }
   .grid-3 { grid-template-columns: 1fr; }
   .quote-container { grid-template-columns: 1fr; }
-  .nav-contact { display: none; }
+  .why-grid { flex-direction: column; align-items: center; }
   
-  /* --- THE ONE-LINE BUTTON FIX --- */
+  /* --- THE BUTTON FIX --- */
   .btn-group { 
-    flex-direction: row; /* Forces side-by-side */
+    flex-direction: row; 
     width: 100%; 
     gap: 10px; 
-    padding: 0 10px; /* Small padding so they don't hit edge */
+    padding: 0 10px; 
   }
   .btn { 
-    width: 50%; /* Equal width */
-    padding: 15px 10px; /* Adjust padding to fit text */
-    font-size: 13px; /* Slightly smaller text if needed */
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
+    width: 50%; 
+    padding: 15px 5px; 
+    font-size: 13px; 
+    display: flex; align-items: center; justify-content: center;
   }
 }
