@@ -2,13 +2,13 @@
    1. VARIABLES & RESET
 ========================= */
 :root {
-  --orange: #ff5100;    /* Safety Orange */
+  --orange: #ff5100;    
   --orange-glow: #ff7b3b;
-  --black: #0a0a0a;     /* Deep Black */
-  --navy: #0f172a;      /* Deep Navy (Like Inspo Background) */
-  --grey-light: #f8f9fa; /* Clean White/Grey for Services */
+  --black: #0a0a0a;     
+  --navy: #0f172a;      
+  --grey-light: #f8f9fa; 
   --text-main: #ffffff;
-  --text-dark: #333333; /* Text color for light sections */
+  --text-dark: #333333; 
   
   --radius: 6px;
   --font-main: 'Segoe UI', system-ui, sans-serif;
@@ -35,11 +35,10 @@ a { text-decoration: none; transition: 0.3s; }
   z-index: 100;
   background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
 }
-
 .nav-container { display: flex; justify-content: space-between; align-items: center; }
 
 .brand { display: flex; align-items: center; gap: 15px; }
-.logo-img { height: 50px; width: auto; } /* Control Logo Size */
+.logo-img { height: 50px; width: auto; }
 
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-text .name { font-weight: 800; font-size: 20px; letter-spacing: 1px; color: white; }
@@ -50,10 +49,9 @@ a { text-decoration: none; transition: 0.3s; }
   display: flex; align-items: center; gap: 8px; 
   color: white; font-weight: 600; font-size: 16px;
 }
-.icon-sm { width: 18px; height: 18px; color: var(--orange); }
 
 /* =========================
-   3. HERO SECTION (Elegant & Centered)
+   3. HERO SECTION
 ========================= */
 .hero {
   position: relative;
@@ -61,37 +59,19 @@ a { text-decoration: none; transition: 0.3s; }
   display: flex; align-items: center; justify-content: center;
   text-align: center;
 }
-
 .hero-bg { position: absolute; inset: 0; z-index: -1; }
 .hero-bg img { width: 100%; height: 100%; object-fit: cover; }
-.overlay { 
-  position: absolute; inset: 0; 
-  background: radial-gradient(circle at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%);
-}
-
+.overlay { position: absolute; inset: 0; background: radial-gradient(circle at center, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.9) 100%); }
 .hero-content { position: relative; max-width: 800px; margin: auto; }
 
 .badge {
   background: rgba(255, 81, 0, 0.2);
   border: 1px solid var(--orange);
   color: var(--orange);
-  display: inline-block;
-  padding: 5px 12px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 25px;
+  display: inline-block; padding: 5px 12px; font-size: 12px; font-weight: 700; text-transform: uppercase; margin-bottom: 25px;
 }
-
-.hero h1 { 
-  font-size: 52px; line-height: 1.1; font-weight: 900; 
-  margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; 
-}
-
-.hero p { 
-  font-size: 18px; color: #e5e5e5; margin-bottom: 40px; 
-  max-width: 700px; margin-inline: auto; 
-}
+.hero h1 { font-size: 52px; line-height: 1.1; font-weight: 900; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 2px; }
+.hero p { font-size: 18px; color: #e5e5e5; margin-bottom: 40px; max-width: 700px; margin-inline: auto; }
 
 .btn-group { display: flex; gap: 20px; justify-content: center; }
 .btn { padding: 15px 40px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 14px; border-radius: 4px; }
@@ -101,25 +81,24 @@ a { text-decoration: none; transition: 0.3s; }
 .btn-outline:hover { background: white; color: black; }
 
 /* =========================
-   4. WHY CHOOSE US (New Section)
+   4. WHY CHOOSE US
 ========================= */
-.why-us {
-  background: var(--navy); /* Dark Blue like Inspo */
-  padding: 80px 0;
-  text-align: center;
-  border-bottom: 4px solid var(--orange);
-}
+.why-us { background: var(--navy); padding: 80px 0; text-align: center; border-bottom: 4px solid var(--orange); }
 .why-content h2 { font-size: 36px; margin-bottom: 10px; }
 .subtitle { color: #a0aec0; margin-bottom: 50px; max-width: 600px; margin-inline: auto; }
 
-.why-grid { display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+.why-grid { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
 .why-item { max-width: 300px; }
-.why-icon { font-size: 40px; margin-bottom: 15px; }
+
+/* NEW SVG ICON STYLES */
+.why-icon-box { margin-bottom: 15px; color: var(--orange); } /* Sets color for SVGs */
+.icon-svg-large { width: 50px; height: 50px; fill: currentColor; } /* 1:1 ratio */
+
 .why-item h3 { color: var(--orange); margin-bottom: 10px; font-size: 20px; }
 .why-item p { color: #ccc; font-size: 15px; }
 
 /* =========================
-   5. SERVICES (Light Clean Look)
+   5. SERVICES
 ========================= */
 .light-bg { background: var(--grey-light); color: var(--text-dark); }
 .section { padding: 100px 0; }
@@ -130,86 +109,80 @@ a { text-decoration: none; transition: 0.3s; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
 
 .card {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05); /* Soft shadow like Trivolt */
-  position: relative;
-  border-bottom: 3px solid transparent;
-  transition: 0.3s;
+  background: white; padding: 30px; border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  position: relative; border-bottom: 3px solid transparent; transition: 0.3s;
 }
 .card:hover { transform: translateY(-5px); border-bottom-color: var(--orange); }
 
 .card-num { 
-  display: block; 
-  font-size: 14px; font-weight: 900; 
+  display: block; font-size: 14px; font-weight: 900; 
   color: white; background: var(--orange);
   width: 40px; height: 30px; 
   display: flex; align-items: center; justify-content: center;
   border-radius: 4px; margin-bottom: 15px;
 }
-
 .card h3 { font-size: 20px; margin-bottom: 10px; color: var(--black); font-weight: 700; }
 .card p { color: #666; font-size: 15px; line-height: 1.6; }
 
 /* =========================
-   6. GET A QUOTE (Split Layout)
+   6. GET A QUOTE
 ========================= */
 .quote-section { background: var(--navy); padding: 80px 0; }
 .quote-container { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
-
 .quote-text h2 { font-size: 36px; margin-bottom: 20px; }
 .quote-text p { color: #a0aec0; margin-bottom: 40px; font-size: 18px; }
 
-.contact-details-box { margin-top: 30px; }
 .detail-row { display: flex; gap: 15px; margin-bottom: 25px; align-items: center; }
-.detail-row span { font-size: 24px; background: rgba(255,255,255,0.1); padding: 10px; border-radius: 50%; }
+
+/* NEW SVG CIRCLE STYLE */
+.icon-circle { 
+  background: rgba(255,255,255,0.1); 
+  width: 50px; height: 50px; 
+  border-radius: 50%; 
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange);
+}
+.icon-svg-med { width: 24px; height: 24px; fill: currentColor; } /* 1:1 ratio */
+
 .detail-row a { color: white; font-weight: bold; font-size: 18px; }
 
-/* FORM STYLES */
-.form-box {
-  background: white;
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+/* FORM */
+.form-box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); }
 .form-box h3 { color: var(--black); margin-bottom: 20px; font-size: 24px; text-align: center; }
-
 .form-group { margin-bottom: 15px; }
 .form-group input, .form-group textarea {
-  width: 100%;
-  padding: 15px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-family: inherit;
-  font-size: 15px;
+  width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; font-size: 15px;
 }
 .form-group input:focus, .form-group textarea:focus { outline: 2px solid var(--orange); border-color: transparent; }
-
-.btn-submit {
-  width: 100%;
-  background: var(--navy);
-  color: white;
-  padding: 15px;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 16px;
-  transition: 0.3s;
-}
+.btn-submit { width: 100%; background: var(--navy); color: white; padding: 15px; border: none; font-weight: bold; cursor: pointer; border-radius: 5px; font-size: 16px; transition: 0.3s; }
 .btn-submit:hover { background: var(--orange); }
 
-/* =========================
-   7. FOOTER & MOBILE
-========================= */
 .footer { background: black; padding: 30px 0; text-align: center; border-top: 1px solid #222; }
 .copyright { color: #888; font-size: 14px; }
 
+/* =========================
+   7. MOBILE RESPONSIVE (THE BUTTON FIX)
+========================= */
 @media (max-width: 768px) {
   .hero h1 { font-size: 32px; }
   .grid-3 { grid-template-columns: 1fr; }
   .quote-container { grid-template-columns: 1fr; }
-  .nav-contact { display: none; } /* Hide phone on very small screens if needed, or keep it */
-  .why-grid { flex-direction: column; align-items: center; }
+  .nav-contact { display: none; }
+  
+  /* --- THE ONE-LINE BUTTON FIX --- */
+  .btn-group { 
+    flex-direction: row; /* Forces side-by-side */
+    width: 100%; 
+    gap: 10px; 
+    padding: 0 10px; /* Small padding so they don't hit edge */
+  }
+  .btn { 
+    width: 50%; /* Equal width */
+    padding: 15px 10px; /* Adjust padding to fit text */
+    font-size: 13px; /* Slightly smaller text if needed */
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+  }
 }
