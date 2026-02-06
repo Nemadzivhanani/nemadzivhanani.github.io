@@ -1,0 +1,108 @@
+/* --- THE "NEW" BRAND PALETTE --- */
+:root {
+  --primary-orange: #e65100; /* Deep Safety Orange from card */
+  --accent-orange: #ff8f00;  /* Brighter Orange for hover */
+  --bg-black: #121212;       /* Card Background */
+  --text-white: #ffffff;
+  --text-grey: #cccccc;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Arial, sans-serif; }
+
+body { background: var(--bg-black); color: var(--text-white); }
+a { text-decoration: none; transition: 0.3s; }
+
+/* HEADER */
+header { 
+  background: black; 
+  border-bottom: 2px solid var(--primary-orange); 
+  padding: 20px 0; 
+  position: sticky; top: 0; z-index: 100;
+}
+.container { width: 90%; max-width: 1100px; margin: auto; }
+.nav-flex { display: flex; justify-content: space-between; align-items: center; }
+
+/* LOGO */
+.brand-box { display: flex; align-items: center; gap: 10px; }
+.logo-text { font-size: 24px; font-weight: 900; letter-spacing: 1px; line-height: 1; }
+.logo-main { color: var(--primary-orange); font-size: 32px; } 
+.logo-sub { font-size: 12px; color: white; display: block; font-weight: normal; opacity: 0.8;}
+
+/* BUTTONS */
+.call-btn { 
+  background: var(--primary-orange); color: white; 
+  padding: 10px 20px; font-weight: bold; border-radius: 4px;
+  display: flex; align-items: center; gap: 10px;
+}
+.call-btn:hover { background: var(--accent-orange); }
+
+.btn-main { 
+  background: var(--primary-orange); color: white; padding: 15px 30px; 
+  font-weight: bold; border-radius: 4px; text-transform: uppercase;
+}
+.btn-outline { 
+  border: 2px solid white; color: white; padding: 15px 30px; 
+  font-weight: bold; border-radius: 4px; text-transform: uppercase;
+}
+.btn-outline:hover { background: white; color: black; }
+
+/* HERO */
+.hero {
+  /* Using a dark overlay so text pops */
+  background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1498354177663-8741e85404ba?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover; background-position: center;
+  padding: 100px 0; text-align: center;
+  border-bottom: 1px solid #333;
+}
+.hero h1 { font-size: 42px; margin-bottom: 20px; text-transform: uppercase; font-weight: 800; }
+.hero h1 span { color: var(--primary-orange); }
+.hero p { font-size: 18px; margin-bottom: 30px; color: var(--text-grey); max-width: 600px; margin-inline: auto; }
+.hero-buttons { display: flex; gap: 15px; justify-content: center; }
+
+/* TECH BAR */
+.tech-bar { background: #222; padding: 40px 0; text-align: center; border-top: 1px solid #333; }
+.tech-list { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+.tech-item { font-weight: bold; color: white; display: flex; align-items: center; gap: 10px; }
+.check { color: var(--primary-orange); font-size: 20px; }
+
+/* SERVICES GRID */
+.section { padding: 60px 0; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.section-header h2 { font-size: 32px; color: var(--primary-orange); margin-bottom: 10px; }
+.section-header p { color: var(--text-grey); }
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; }
+
+.card { 
+  background: #1a1a1a; padding: 30px; 
+  border-left: 5px solid var(--primary-orange); 
+  transition: transform 0.2s;
+}
+.card:hover { transform: translateY(-5px); background: #222; }
+.card h3 { font-size: 20px; margin-bottom: 15px; color: white; }
+.card p { color: #aaa; font-size: 15px; line-height: 1.5; }
+.card-icon { font-size: 30px; margin-bottom: 15px; color: var(--primary-orange); }
+
+/* FOOTER */
+.footer { background: black; padding: 50px 0; border-top: 2px solid var(--primary-orange); text-align: center; }
+.contact-box { 
+  background: #1a1a1a; display: inline-block; padding: 30px; 
+  border-radius: 8px; border: 1px solid #333; margin-top: 20px;
+}
+.contact-row { font-size: 20px; margin: 10px 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.contact-label { color: var(--primary-orange); font-weight: bold; font-size: 14px; text-transform: uppercase; display: block; margin-bottom: 5px;}
+.label-space { margin-top: 20px; }
+.white-link { color: white; }
+.email-text { font-size: 16px; }
+.copyright { margin-top: 30px; color: #666; font-size: 12px; }
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 32px; }
+  .nav-flex { flex-direction: column; gap: 15px; }
+  .tech-list { flex-direction: column; gap: 15px; }
+  .hero-buttons { flex-direction: column; }
+  .btn-main, .btn-outline { width: 100%; text-align: center; }
+  .icon-phone { font-size: 20px; }
+}
