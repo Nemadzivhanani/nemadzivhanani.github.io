@@ -79,6 +79,40 @@
     </div>
   </div>
 
+  <div id="view-product" style="display: none;">
+    <div class="container" style="padding-top: 40px;">
+      <button onclick="goHome()" class="back-btn">← Back to Store</button>
+      
+      <div class="product-detail-grid">
+        <div class="detail-img-box">
+          <img id="detail-img" src="" alt="Product">
+        </div>
+        
+        <div class="detail-info">
+          <h2 id="detail-title" class="product-title-large">Product Name</h2>
+          <p id="detail-price" class="product-price-large">R 0.00</p>
+          
+          <p class="desc-text">
+            Official JANE 4 Streetwear. High-quality cotton blend designed for the modern urban environment.
+            Limited drop release.
+          </p>
+
+          <div class="size-selector">
+            <label>Select Size</label>
+            <div class="size-btns">
+              <button class="size-btn">S</button>
+              <button class="size-btn active">M</button>
+              <button class="size-btn">L</button>
+              <button class="size-btn">XL</button>
+            </div>
+          </div>
+
+          <button id="detail-add-btn" class="btn-black block big-btn">Add to Bag</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div id="cart-sidebar" class="cart-sidebar">
     <div class="cart-header">
       <h3>Your Bag</h3>
@@ -95,6 +129,7 @@
   <div id="checkout-modal" class="checkout-modal">
     <div class="checkout-content">
       <button class="close-checkout" onclick="closeCheckout()">×</button>
+      
       <div id="checkout-step-1">
         <h2>Secure Checkout</h2>
         <div class="input-group">
@@ -116,11 +151,13 @@
         </div>
         <button onclick="processPayment()" class="btn-black block" id="pay-btn">Pay Now</button>
       </div>
+
       <div id="checkout-step-2" style="display: none; text-align: center; padding: 40px 0;">
         <div class="success-icon"><svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg></div>
         <h2>Order Confirmed!</h2>
         <button onclick="closeCheckout()" class="btn-outline block" style="margin-top: 20px;">Continue Shopping</button>
       </div>
+
     </div>
   </div>
 
