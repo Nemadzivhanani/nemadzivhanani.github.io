@@ -27,16 +27,22 @@ a { text-decoration: none; transition: 0.3s; }
 .container { width: 90%; max-width: 1200px; margin: auto; }
 
 /* =========================
-   2. HEADER & LOGO
+   2. HEADER & LOGO (PC FIX)
 ========================= */
 .header {
   position: absolute; top: 0; left: 0; right: 0;
-  padding: 15px 0;
+  padding: 20px 0; /* Little more space on PC */
   z-index: 100;
   background: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent);
 }
-.nav-container { display: flex; justify-content: space-between; align-items: center; }
 
+.nav-container { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+}
+
+/* LEFT SIDE: LOGO */
 .brand { display: flex; align-items: center; gap: 15px; }
 .logo-img { height: 50px; width: auto; }
 
@@ -44,12 +50,36 @@ a { text-decoration: none; transition: 0.3s; }
 .brand-text .name { font-weight: 800; font-size: 20px; letter-spacing: 1px; color: white; }
 .brand-text .sub { font-size: 11px; color: var(--orange); font-weight: 600; letter-spacing: 2px; }
 
-.nav-contact { display: flex; align-items: center; }
-.nav-phone { 
-  display: flex; align-items: center; gap: 8px; 
-  color: white; font-weight: 600; font-size: 16px;
+/* RIGHT SIDE: CONTACT (THE FIX) */
+.nav-contact { 
+  display: flex; 
+  align-items: center;
+  flex-shrink: 0; /* Prevents the box from shrinking */
 }
 
+.nav-phone { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  color: white; 
+  font-weight: 700; 
+  font-size: 18px; /* Bigger and easier to read on PC */
+  white-space: nowrap; /* <--- THIS IS THE KEY FIX. It forces text to stay on one line. */
+  transition: 0.3s;
+}
+
+.nav-phone:hover {
+  color: var(--orange); /* Nice hover effect for PC users */
+}
+
+/* =========================
+   MOBILE HIDE (Keep this exactly as is)
+========================= */
+@media (max-width: 768px) {
+  .nav-contact { 
+    display: none !important; /* Forces it to stay hidden on phone */
+  }
+}
 /* =========================
    3. HERO SECTION
 ========================= */
