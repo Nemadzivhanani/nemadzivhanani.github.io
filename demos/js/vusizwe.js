@@ -1,7 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
-    console.log("VUSIZWE Corporate Demo Loaded");
+    console.log("VUSIZWE Mobile-First Demo Loaded");
 
-    // 1. Smooth Scrolling for Mobile and Desktop Navigation
+    // 1. Mobile Hamburger Menu Toggle
+    const mobileMenu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (mobileMenu) {
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    }
+
+    // Close menu when a link is clicked (crucial for mobile UX)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // 2. Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -9,41 +26,41 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
 
             if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                // Offset for the fixed header
+                const headerOffset = 70;
+                const elementPosition = targetElement.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
     });
 
-    // 2. Interactive Form Simulation for Pitch
+    // 3. Interactive Form Simulation
     const form = document.getElementById('demo-form');
     if (form) {
         form.addEventListener('submit', (e) => {
             e.preventDefault(); 
             const btn = form.querySelector('.btn-submit');
             const originalText = btn.innerText;
-            const originalBg = btn.style.backgroundColor;
             
-            // Visual feedback: Sending state
             btn.innerText = "SENDING...";
             btn.style.opacity = "0.7";
 
-            // Visual feedback: Success state
             setTimeout(() => {
                 btn.innerText = "REQUEST RECEIVED!";
-                btn.style.backgroundColor = "#1B2B4C"; // Brand Navy
-                btn.style.color = "#ffffff";
+                btn.style.backgroundColor = "#1B2B4C"; 
                 btn.style.opacity = "1";
                 form.reset(); 
                 
-                // Revert back to original state
                 setTimeout(() => {
                     btn.innerText = originalText;
-                    btn.style.backgroundColor = originalBg; 
-                }, 3500);
-            }, 1500);
+                    btn.style.backgroundColor = ""; 
+                }, 3000);
+            }, 1200);
         });
     }
 });
